@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "name": "recipes",
+    "date": "November 2024"
+  },
+  "data": [
+    {
+      "id": 1,
+      "name": "Vegan Buddha Bowl",
+      "ingredients": ["quinoa", "chickpeas", "avocado", "spinach", "carrot", "hummus"],
+      "emission_per_meal": 0.45,
+      "servings": 2,
+      "diet": "vegan",
+      "time": 25
+    },
+    {
+      "id": 2,
+      "name": "Vegetarian Pasta Primavera",
+      "ingredients": ["penne pasta", "bell peppers", "zucchini", "parmesan", "olive oil", "basil"],
+      "emission_per_meal": 0.75,
+      "servings": 4,
+      "diet": "vegetarian",
+      "time": 30
+    },
+    {
+      "id": 3,
+      "name": "Vegan Lentil Soup",
+      "ingredients": ["red lentils", "onion", "garlic", "carrot", "celery", "vegetable broth"],
+      "emission_per_meal": 0.60,
+      "servings": 6,
+      "diet": "vegan",
+      "time": 40
+    },
+    {
+      "id": 4,
+      "name": "Vegetarian Mushroom Risotto",
+      "ingredients": ["arborio rice", "mushrooms", "parmesan", "onion", "garlic", "white wine"],
+      "emission_per_meal": 0.80,
+      "servings": 4,
+      "diet": "vegetarian",
+      "time": 45
+    },
+    {
+      "id": 5,
+      "name": "Vegan Tofu Stir-Fry",
+      "ingredients": ["tofu", "broccoli", "carrot", "soy sauce", "sesame oil", "ginger"],
+      "emission_per_meal": 0.50,
+      "servings": 3,
+      "diet": "vegan",
+      "time": 20
+    },
+    {
+      "id": 6,
+      "name": "Vegetarian Greek Salad",
+      "ingredients": ["feta cheese", "tomatoes", "cucumber", "olives", "red onion", "oregano"],
+      "emission_per_meal": 0.40,
+      "servings": 2,
+      "diet": "vegetarian",
+      "time": 15
+    },
+    {
+      "id": 7,
+      "name": "Vegan Black Bean Chili",
+      "ingredients": ["black beans", "onion", "garlic", "tomatoes", "corn", "chili powder"],
+      "emission_per_meal": 0.65,
+      "servings": 5,
+      "diet": "vegan",
+      "time": 35
+    },
+    {
+      "id": 8,
+      "name": "Vegetarian Caprese Sandwich",
+      "ingredients": ["mozzarella", "tomato", "basil", "ciabatta bread", "balsamic glaze"],
+      "emission_per_meal": 0.55,
+      "servings": 1,
+      "diet": "vegetarian",
+      "time": 10
+    },
+    {
+      "id": 9,
+      "name": "Vegan Sweet Potato Curry",
+      "ingredients": ["sweet potato", "coconut milk", "spinach", "onion", "curry paste"],
+      "emission_per_meal": 0.70,
+      "servings": 4,
+      "diet": "vegan",
+      "time": 40
+    },
+    {
+      "id": 10,
+      "name": "Vegetarian Spinach Lasagna",
+      "ingredients": ["lasagna sheets", "spinach", "ricotta", "tomato sauce", "parmesan"],
+      "emission_per_meal": 0.85,
+      "servings": 6,
+      "diet": "vegetarian",
+      "time": 60
+    }
+  ]
+}
