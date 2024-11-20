@@ -4,10 +4,10 @@ const router = express.Router();
 
 // create a proxy for each microservice
 const microserviceProxy = createProxyMiddleware({
-  target: 'http://microservice:3011',
+  target: 'http://recipes:3011',
   changeOrigin: true
 });
 
-router.use('/microservice', microserviceProxy);
+router.use('/recipes', microserviceProxy);
 
 export default router;

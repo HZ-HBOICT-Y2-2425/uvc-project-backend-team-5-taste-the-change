@@ -1,14 +1,15 @@
 import express from 'express';
-import { responseExample, updateExample, responseByIdExample } from '../controllers/exampleController.js';
-import { checkName } from '../middleware/exampleMiddleware.js';
+import { getAllRecipes, getRecipeId } from '../controllers/recipeController.js';
+// import cors from 'cors';
 const router = express.Router();
 
-// routes
+
 router.get('/', (req, res, next) => {
   res.json('hi');
 });
-router.get('/example', checkName, responseExample);
-router.post('/example', checkName, updateExample);
-router.get('/example/:id', checkName, responseByIdExample);
+
+router.get('/recipes', getAllRecipes);
+router.get('/recipes/:id', getRecipeId)
+
 
 export default router;
