@@ -1,161 +1,95 @@
 {
   "recipes": [
     {
-      "id": 1,
-      "name": "Vegan Buddha Bowl",
-      "ingredients": [
-        "quinoa",
-        "chickpeas",
-        "avocado",
-        "spinach",
-        "carrot",
-        "hummus"
-      ],
+      "name": "Buddha Bowl",
+      "ingredients": ["quinoa", "chickpeas", "avocado", "spinach", "carrot", "hummus"],
       "emission_per_meal": 0.45,
       "servings": 2,
-      "diet": "vegan",
-      "time": 25
+      "diet": "Vegan",
+      "time": 25,
+      "image": "https://www.sunglowkitchen.com/wp-content/uploads/2023/03/tofu-buddha-bowls-peanut-sauce-8-1.jpg"
     },
     {
-      "id": 2,
-      "name": "Vegetarian Pasta Primavera",
-      "ingredients": [
-        "penne pasta",
-        "bell peppers",
-        "zucchini",
-        "parmesan",
-        "olive oil",
-        "basil"
-      ],
+      "name": "Pasta Primavera",
+      "ingredients": ["penne pasta", "bell peppers", "zucchini", "parmesan", "olive oil", "basil"],
       "emission_per_meal": 0.75,
       "servings": 4,
-      "diet": "vegetarian",
-      "time": 30
+      "diet": "Vegetarian",
+      "time": 30,
+      "image": "https://www.cookingclassy.com/wp-content/uploads/2018/09/pasta-primavera-2.jpg"
     },
     {
       "id": 3,
-      "name": "Vegan Lentil Soup",
-      "ingredients": [
-        "red lentils",
-        "onion",
-        "garlic",
-        "carrot",
-        "celery",
-        "vegetable broth"
-      ],
-      "emission_per_meal": 0.6,
+      "name": "Lentil Soup",
+      "ingredients": ["red lentils", "onion", "garlic", "carrot", "celery", "vegetable broth"],
+      "emission_per_meal": 0.60,
       "servings": 6,
-      "diet": "vegan",
-      "time": 40
+      "diet": "Vegan",
+      "time": 40,
+      "image": "https://simple-veganista.com/wp-content/uploads/2019/10/vegan-lentil-soup-recipe-5.jpg"
     },
     {
-      "id": 4,
-      "name": "Vegetarian Mushroom Risotto",
-      "ingredients": [
-        "arborio rice",
-        "mushrooms",
-        "parmesan",
-        "onion",
-        "garlic",
-        "white wine"
-      ],
-      "emission_per_meal": 0.8,
+      "name": "Mushroom Risotto",
+      "ingredients": ["arborio rice", "mushrooms", "parmesan", "onion", "garlic", "white wine"],
+      "emission_per_meal": 0.80,
       "servings": 4,
-      "diet": "vegetarian",
-      "time": 45
+      "diet": "Vegetarian",
+      "time": 45,
+      "image": "https://lovingitvegan.com/wp-content/uploads/2020/08/Vegan-Mushroom-Risotto-Square.jpg"
     },
     {
-      "id": 5,
-      "name": "Vegan Tofu Stir-Fry",
-      "ingredients": [
-        "tofu",
-        "broccoli",
-        "carrot",
-        "soy sauce",
-        "sesame oil",
-        "ginger"
-      ],
-      "emission_per_meal": 0.5,
+      "name": "Tofu Stir-Fry",
+      "ingredients": ["tofu", "broccoli", "carrot", "soy sauce", "sesame oil", "ginger"],
+      "emission_per_meal": 0.50,
       "servings": 3,
-      "diet": "vegan",
-      "time": 20
+      "diet": "Vegan",
+      "time": 20,
+      "image": "https://littlespicejar.com/wp-content/uploads/2015/08/Sesame-Ginger-Tofu-Stir-Fry-1-735x1103.jpeg"
     },
     {
-      "id": 6,
-      "name": "Vegetarian Greek Salad",
-      "ingredients": [
-        "feta cheese",
-        "tomatoes",
-        "cucumber",
-        "olives",
-        "red onion",
-        "oregano"
-      ],
-      "emission_per_meal": 0.4,
+      "name": "Greek Salad",
+      "ingredients": ["feta cheese", "tomatoes", "cucumber", "olives", "red onion", "oregano"],
+      "emission_per_meal": 0.40,
       "servings": 2,
-      "diet": "vegetarian",
-      "time": 15
+      "diet": "Vegetarian",
+      "time": 15,
+      "image": "https://foodsharingvegan.com/wp-content/uploads/2022/06/Vegan-Greek-Salad-Plant-Based-on-a-Budget-1-2.jpg"
     },
     {
-      "id": 7,
-      "name": "Vegan Black Bean Chili",
-      "ingredients": [
-        "black beans",
-        "onion",
-        "garlic",
-        "tomatoes",
-        "corn",
-        "chili powder"
-      ],
+      "name": "Black Bean Chili",
+      "ingredients": ["black beans", "onion", "garlic", "tomatoes", "corn", "chili powder"],
       "emission_per_meal": 0.65,
       "servings": 5,
-      "diet": "vegan",
-      "time": 35
+      "diet": "Vegan",
+      "time": 35,
+      "image": "https://www.veggiessavetheday.com/wp-content/uploads/2022/08/Vegan-Black-Bean-Chili-FI-1200.jpg"
     },
     {
-      "id": 8,
-      "name": "Vegetarian Caprese Sandwich",
-      "ingredients": [
-        "mozzarella",
-        "tomato",
-        "basil",
-        "ciabatta bread",
-        "balsamic glaze"
-      ],
+      "name": "Caprese Sandwich",
+      "ingredients": ["mozzarella", "tomato", "basil", "ciabatta bread", "balsamic glaze"],
       "emission_per_meal": 0.55,
       "servings": 1,
-      "diet": "vegetarian",
-      "time": 10
+      "diet": "Vegetarian",
+      "time": 10,
+      "image": "https://plantedinthekitchen.com/wp-content/uploads/2022/01/Vegan-Caprese-Panini-1.jpg"
     },
     {
-      "id": 9,
-      "name": "Vegan Sweet Potato Curry",
-      "ingredients": [
-        "sweet potato",
-        "coconut milk",
-        "spinach",
-        "onion",
-        "curry paste"
-      ],
-      "emission_per_meal": 0.7,
+      "name": "Sweet Potato Curry",
+      "ingredients": ["sweet potato", "coconut milk", "spinach", "onion", "curry paste"],
+      "emission_per_meal": 0.70,
       "servings": 4,
-      "diet": "vegan",
-      "time": 40
+      "diet": "Vegan",
+      "time": 40,
+      "image": "https://elavegan.com/wp-content/uploads/2019/05/Healthy-Creamy-Coconut-Sweet-Potato-Curry-Recipe-with-spinach-and-rice.jpg"
     },
     {
-      "id": 10,
-      "name": "Vegetarian Spinach Lasagna",
-      "ingredients": [
-        "lasagna sheets",
-        "spinach",
-        "ricotta",
-        "tomato sauce",
-        "parmesan"
-      ],
+      "name": "Spinach Lasagna",
+      "ingredients": ["lasagna sheets", "spinach", "ricotta", "tomato sauce", "parmesan"],
       "emission_per_meal": 0.85,
       "servings": 6,
-      "diet": "vegetarian",
-      "time": 60
+      "diet": "Vegetarian",
+      "time": 60,
+      "image": "https://cdn.loveandlemons.com/wp-content/uploads/2023/12/vegetarian-lasagna-scaled.jpg"
     }
   ]
 }
