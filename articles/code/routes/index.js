@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllArticles } from '../controllers/articleController.js';
+import { getAllArticles, getArticleId } from '../controllers/articleController.js';
 // import cors from 'cors';
 const router = express.Router();
 
@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/articles', getAllArticles);
-// router.get('/recipes/:id', getRecipeId)
+router.get('/articles/:id', getArticleId)
 
 
 export default router;
