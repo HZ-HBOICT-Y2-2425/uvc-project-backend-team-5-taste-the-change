@@ -1,13 +1,24 @@
 services:
-  microservice:
-    container_name: microservice
-    build: ./microservice
+  articles:
+    container_name: articles
+    build: ./articles
     volumes:
-      - ./microservice/code:/usr/src/app
+      - ./articles/code:/usr/src/app
     networks:
       - msexample
     ports:
       - "3011:3011"
+    working_dir: /usr/src/app
+    command: bash -c "npm install && npm run dev"
+  recipes:
+    container_name: recipes
+    build: ./recipes
+    volumes:
+      - ./recipes/code:/usr/src/app
+    networks:
+      - msexample
+    ports:
+      - "3012:3012"
     working_dir: /usr/src/app
     command: bash -c "npm install && npm run dev"
   gateway:
