@@ -2,7 +2,7 @@
 import { readFile } from 'fs/promises';
 const data = JSON.parse(
   await readFile(
-    new URL('./db.json', import.meta.url)
+    new URL('./recipes.json', import.meta.url)
   )
 );
 
@@ -18,7 +18,7 @@ export async function getAllRecipes(req, res) {
 
 export function getRecipeId(req, res)  {
   const id = parseInt(req.params.id, 10); // Convert the id to a number
-  const recipe = data.data.find(item => item.id === id); // Assuming your recipes have an "id" field
+  const recipe = data.recipes.find(item => item.id === id); // Assuming your recipes have an "id" field
 
   try {
     res.status(200).json({
