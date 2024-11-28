@@ -1,31 +1,26 @@
 {
   "articles": [
     {
-      "id": 1,
       "name": "Understanding SvelteKit",
       "imgUrl": "https://example.com/images/sveltekit.jpg",
       "info": "Learn the fundamentals of SvelteKit and how it simplifies building web applications."
     },
     {
-      "id": 2,
       "name": "The Power of Reactive Programming",
       "imgUrl": "https://example.com/images/reactive-programming.jpg",
       "info": "Dive into reactive programming concepts and how they are implemented in Svelte."
     },
     {
-      "id": 3,
       "name": "State Management in Svelte",
       "imgUrl": "https://example.com/images/state-management.jpg",
       "info": "Explore various approaches to manage state in Svelte applications."
     },
     {
-      "id": 4,
       "name": "SvelteKit and SSR: A Match Made in Heaven",
       "imgUrl": "https://example.com/images/sveltekit-ssr.jpg",
       "info": "Discover the power of server-side rendering (SSR) in SvelteKit applications."
     },
     {
-      "id": 5,
       "name": "Deploying SvelteKit Applications",
       "imgUrl": "https://example.com/images/sveltekit-deployment.jpg",
       "info": "Learn how to deploy SvelteKit apps to various hosting platforms like Vercel and Netlify."
