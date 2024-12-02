@@ -1,35 +1,58 @@
+import mysql from 'mysql2/promise';
 
-import { readFile } from 'fs/promises';
-const data = JSON.parse(
-  await readFile(
-    new URL('./recipes.json', import.meta.url)
-  )
-);
+// Create a connection pool
+const recipe = mysql.createPool({
+  host: '127.0.0.1',
+  user: 'root',
+  password: "dSK$ME*b+=;3&Pr5T,LC/B",
+  database: 'recipe_app',
+  port: 3306
+});
 
-
-export async function getAllRecipes(req, res) {
+// Function to fetch all recipes
+export async function getAllRecipes(req, res, next) {
   try {
-    //set header before response
-    res.status(200).send(data);
+    const [recipeRow] = await recipe.query('SELECT * FROM recipes');
+    res.status(200).json(recipeRow);
   } catch (err) {
     next(err);
   }
 }
 
-export function getRecipeId(req, res)  {
-  const id = parseInt(req.params.id, 10); // Convert the id to a number
-  const recipe = data.recipes.find(item => item.id === id); // Assuming your recipes have an "id" field
+// Function to fetch a recipe by ID
+export async function getRecipeId(req, res, next) {
+  const id = parseInt(req.params.id, 10);
 
   try {
+    const [recipeRow] = await recipe.query('SELECT * FROM recipes WHERE id = ?', [id]);
+
+    if (recipeRow.length === 0) {
+      return res.status(404).send('Recipe not found');
+    }
+
+    const recipe = recipeRow[0];
     res.status(200).json({
       name: recipe.name,
-      ingredients: recipe.ingredients,
+      ingredients: recipe.ingredients.split(','),
       emission_per_meal: recipe.emission_per_meal,
       servings: recipe.servings,
       diet: recipe.diet,
       time: recipe.time
     });
   } catch (err) {
-    res.status(404).send(err)
+    next(err);
   }
-};
+}
+
+
+// Test connection
+async function testConnection() {
+  try {
+    const [recipeRow] = await recipe.query('SELECT 1');
+    console.log('Database connection successful', recipeRow);
+  } catch (err) {
+    console.error('Error connecting to the database:', err.message);
+  }
+}
+
+testConnection();
