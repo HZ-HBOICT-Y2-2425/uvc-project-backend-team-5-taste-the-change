@@ -99,6 +99,46 @@
       "diet": "Vegetarian",
       "time": 60,
       "image": "https://cdn.loveandlemons.com/wp-content/uploads/2023/12/vegetarian-lasagna-scaled.jpg"
+    },
+    {
+      "name": "Chicken Teriyaki",
+      "description": "Teriyaki chicken is a flavorful dish featuring tender chicken pieces marinated in a sweet and savory sauce made from soy sauce, mirin, and sugar. Grilled or pan-seared to perfection, it's often garnished with sesame seeds and green onions, offering a delicious balance of umami and sweetness that pairs beautifully with rice and vegetables.",
+      "ingredients": ["chicken", "soy sauce", "mirin", "sake", "sugar"],
+      "emission_per_meal": 1.1,
+      "servings": 4,
+      "diet": "Flexitarian",
+      "time": 20,
+      "image": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2024-05-chicken-teriyaki-190%2Fchicken-teriyaki-190-171-horizontal"
+    },
+    {
+      "name": "Beef Stroganoff",
+      "description": "Beef Stroganoff is a classic Russian dish featuring tender strips of beef sautéed with onions and mushrooms in a creamy sauce, typically flavored with mustard and Worcestershire sauce. Served over egg noodles or rice, this comforting meal combines rich flavors and a velvety texture, making it a timeless favorite.",
+      "ingredients": ["steak", "onion", "broth", "mustard", "sour cream", "flour", "mushrooms"],
+      "emission_per_meal": 1.6,
+      "servings": 5,
+      "diet": "Keto",
+      "time": 30,
+      "image": "https://www.recipetineats.com/tachyon/2018/01/Beef-Stroganoff_8-1.jpg?resize=900%2C1260&zoom=0.72"
+    },
+    {
+      "name": "Coconut fish curry",
+      "description": "Coconut fish curry is a flavorful and aromatic dish featuring tender fish fillets simmered in a creamy coconut milk sauce, infused with spices like turmeric, ginger, and garlic. This vibrant curry is often enhanced with fresh herbs, lime juice, and vegetables, providing a perfect balance of heat and creaminess. Serve it over rice for a delightful meal that transports you to tropical shores.",
+      "ingredients": ["hake", "prawns", "coconut milk", "rice", "garlic", "ginger", "onion", "sugar"],
+      "emission_per_meal": 1.0,
+      "servings": 4,
+      "diet": "Pescatarian",
+      "time": 30,
+      "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/coconut-fish-curry-1823a09.jpg?quality=90&webp=true&resize=440,400"
+    },
+    {
+      "name": "Chickpea marinara",
+      "description": "Chickpea Marinara is a hearty and nutritious dish that combines tender chickpeas with a rich, homemade marinara sauce. Packed with protein and fiber, this satisfying meal features sautéed garlic and onions blended with crushed tomatoes, fresh basil, and a hint of oregano, all simmered to perfection. Serve it over pasta or enjoy it on its own for a delicious vegetarian option that’s both comforting and flavorful.",
+      "ingredients": ["chickpeas", "mozzarella", "romano cheese", "onion", "garlic", "marinara", "parsley"],
+      "emission_per_meal": 0.9,
+      "servings": 4,
+      "diet": "Mediterranean",
+      "time": 35,
+      "image": "https://www.themediterraneandish.com/wp-content/uploads/2024/08/TMD-Chickpea-Marinara-Leads-02.jpg"
     }
   ]
 }
