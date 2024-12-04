@@ -2,7 +2,7 @@ import mysql from 'mysql2/promise';
 
 // Create a connection pool
 const recipe = mysql.createPool({
-  host: '127.0.0.1',
+  host: 'localhost',
   user: 'root',
   password: "dSK$ME*b+=;3&Pr5T,LC/B",
   database: 'recipe_app',

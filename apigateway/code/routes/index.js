@@ -1,5 +1,6 @@
 import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import cors from 'cors';
 const router = express.Router();
 
 // create a proxy for each microservice
@@ -15,7 +16,7 @@ const articleProxy = createProxyMiddleware({
 
 
 
-router.use('/recipes', recipeProxy);
-router.use('/articles', articleProxy)
+router.use('/recipes', cors(), recipeProxy);
+router.use('/articles', cors(), articleProxy)
 
 export default router;
