@@ -21,6 +21,17 @@ services:
       - "3012:3012"
     working_dir: /usr/src/app
     command: bash -c "npm install && npm run dev"
+  rabbit_items:
+    container_name: rabbit_items
+    build: ./rabbit_items
+    volumes:
+      - ./rabbit_items/code:/usr/src/app
+    networks:
+      - msexample
+    ports:
+      - "3013:3013"
+    working_dir: /usr/src/app
+    command: bash -c "npm install && npm run dev"   
   gateway:
     container_name: apigateway
     build: ./apigateway

@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Red Bow",
+      "imgUrl": "./public/images/bow.png",
+      "cost": 0,
+      "unlocked": true
+    },
+    {
+      "id": 2,
+      "name": "Carrot",
+      "imgUrl": "./public/images/carrot.png",
+      "cost": 60,
+      "unlocked": false
+    },
+    {
+      "id": 3,
+      "name": "Pink Flower",
+      "imgUrl": "./public/images/pink-flower.png",
+      "cost": 70,
+      "unlocked": false
+    },
+    {
+      "id": 4,
+      "name": "Crown",
+      "imgUrl": "./public/images/crown.png",
+      "cost": 90,
+      "unlocked": false
+    },
+    {
+      "id": 5,
+      "name": "Top Hat",
+      "imgUrl": "./public/images/top-hat.png",
+      "cost": 100,
+      "unlocked": false
+    }
+  ]
+}
