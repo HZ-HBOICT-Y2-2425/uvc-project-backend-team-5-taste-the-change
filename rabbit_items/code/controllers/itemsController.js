@@ -4,15 +4,13 @@ import { readFile, writeFile } from 'fs/promises';
 const dataPath = new URL('./items.json', import.meta.url);
 let data = JSON.parse(await readFile(dataPath));
 
-// Function to get all items with lock status based on user's leaves
+// Function to get all items (for testing: all items are unlocked)
 export async function getAllItems(req, res, next) {
   try {
-    const userLeaves = parseInt(req.query.leaves, 10) || 0; // Get leaf count from query parameters
-
-    // Update unlock status based on user's leaves
+    // Force all items to be unlocked
     const items = data.items.map(item => ({
       ...item,
-      unlocked: item.cost <= userLeaves
+      unlocked: true // Set all items to unlocked for testing
     }));
 
     res.status(200).json(items);
@@ -33,7 +31,7 @@ export function getItemsId(req, res, next) {
   res.status(200).json(rabbitItem);
 }
 
-// Unlock an item if the user has enough leaves
+// Unlock an item (no change needed for testing)
 export async function unlockItem(req, res, next) {
   const id = parseInt(req.params.id, 10);
   const userLeaves = parseInt(req.body.leaves, 10);

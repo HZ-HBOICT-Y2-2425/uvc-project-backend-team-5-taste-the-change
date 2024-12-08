@@ -12,28 +12,28 @@
       "name": "Carrot",
       "imgUrl": "./public/images/carrot.png",
       "cost": 60,
-      "unlocked": false
+      "unlocked": true
     },
     {
       "id": 3,
       "name": "Pink Flower",
       "imgUrl": "./public/images/pink-flower.png",
       "cost": 70,
-      "unlocked": false
+      "unlocked": true
     },
     {
       "id": 4,
       "name": "Crown",
       "imgUrl": "./public/images/crown.png",
       "cost": 90,
-      "unlocked": false
+      "unlocked": true
     },
     {
       "id": 5,
       "name": "Top Hat",
       "imgUrl": "./public/images/top-hat.png",
       "cost": 100,
-      "unlocked": false
+      "unlocked": true
     }
   ]
 }
