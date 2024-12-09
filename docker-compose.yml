@@ -1,38 +1,92 @@
+version: '3.8'
 services:
-  articles:
-    container_name: articles
-    build: ./articles
-    volumes:
-      - ./articles/code:/usr/src/app
-    networks:
-      - msexample
-    ports:
-      - "3011:3011"
-    working_dir: /usr/src/app
-    command: bash -c "npm install && npm run dev"
   recipes:
     container_name: recipes
     build: ./recipes
     volumes:
       - ./recipes/code:/usr/src/app
     networks:
-      - msexample
+      - myrecipes
     ports:
-      - "3012:3012"
+      - "${RECIPES_PORT}:${RECIPES_PORT}"
     working_dir: /usr/src/app
     command: bash -c "npm install && npm run dev"
+    environment:
+      - RECIPES_DB_HOST=mysql-server-recipes
+      - RECIPES_DB_NAME=${RECIPES_DB_NAME}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      - mysql-server-recipes
+    restart: always
+
   gateway:
     container_name: apigateway
     build: ./apigateway
     volumes:
       - ./apigateway/code:/usr/src/app
     networks:
-      - msexample
+      - myrecipes
     ports:
       - "3010:3010"
     working_dir: /usr/src/app
     command: bash -c "npm install && npm run dev"
+    environment:
+      - PORT=3010
+    depends_on:
+      - recipes
+
+  mysql-server-recipes:
+    container_name: mysql-server-recipes
+    image: mysql:8.0
+    networks:
+      - myrecipes
+    environment:
+      - MYSQL_DATABASE=${RECIPES_DB_NAME}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "${RECIPES_MYSQL_PORT}:3306"
+    volumes:
+      - ./recipes/mysql/initdb:/docker-entrypoint-initdb.d  # Mount init SQL files
+      - mysql-data-recipes:/var/lib/mysql
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin:latest
+    networks:
+      - myrecipes
+    environment:
+      - PMA_HOST=mysql-server-recipes
+      - PMA_USER=${MYSQL_USER}
+      - PMA_PASSWORD=${MYSQL_PASSWORD}
+    ports:
+      - "8080:80"
 
 networks:
-  msexample:
+  myrecipes:
     driver: bridge
+
+volumes:
+  mysql-data-recipes:
+
+
+# services:
+#   articles:
+#     container_name: articles
+#     build: ./articles
+#     volumes:
+#       - ./articles/code:/usr/src/app
+#     networks:
+#       - articles
+#     ports:
+#       - "3011:3011"
+#     working_dir: /usr/src/app
+#     command: bash -c "npm install && npm run dev"
+#     environment:
+#       MYSQL_HOST: db
+#       MYSQL_USER: root
+#       MYSQL_PASSWORD: "dSK$ME*b+=;3&Pr5T,LC/B"
+#       MYSQL_DATABASE: recipe_app
