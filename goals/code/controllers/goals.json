@@ -2,46 +2,54 @@
   "goals": {
     "beginner": [
       {
+        "id": 1,
         "goal": "Incorporate More Plant-Based Meals",
         "description": "Start by adding one plant-based meal to your diet each day. It could be as simple as oatmeal for breakfast or a veggie stir-fry for dinner."
       },
       {
+        "id": 2,
         "goal": "Experiment with Plant-Based Proteins",
         "description": "Try different plant-based protein sources like tofu, tempeh, lentils, chickpeas, and quinoa. Aim to include at least one in your meals daily."
       },
       {
+        "id": 3,
         "goal": "Learn Plant-Based Recipes",
         "description": "Pick 3-5 plant-based recipes to try each week. This will help you build a repertoire of delicious, go-to meals."
       }
     ],
     "intermediate": [
       {
+        "id": 4,
         "goal": "Plan and Prep",
         "description": "Dedicate a couple of hours each week to plan your meals and prep ingredients. This can make sticking to a plant-based diet easier during busy days."
       },
       {
+        "id": 5,
         "goal": "Explore New Foods",
         "description": "Challenge yourself to try a new plant-based ingredient or dish each week. This could be a new vegetable, grain, or even a plant-based dessert."
       },
       {
+        "id": 6,
         "goal": "Find Plant-Based Alternatives",
         "description": "Swap out animal-based products for plant-based alternatives. For instance, use almond or oat milk instead of dairy, or try plant-based yogurt and cheese."
       }
     ],
     "advanced": [
       {
+        "id": 7,
         "goal": "Go Fully Plant-Based",
         "description": "Commit to eating a fully plant-based diet for a set period, like 30 days, to see how you feel and discover new favorite foods."
       },
       {
+        "id": 8,
         "goal": "Educate Yourself",
         "description": "Learn more about the nutritional aspects of a plant-based diet. Read books, watch documentaries, or take an online course to deepen your understanding."
       },
       {
+        "id": 9,
         "goal": "Get Involved",
         "description": "Join plant-based communities or support groups, either online or in your local area. Sharing experiences and tips can be incredibly motivating."
       }
     ]
   }
 }
-
