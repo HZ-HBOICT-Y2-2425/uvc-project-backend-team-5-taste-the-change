@@ -13,7 +13,14 @@ const articleProxy = createProxyMiddleware({
   changeOrigin: true
 })
 
+const goalProxy = createProxyMiddleware({
+  target: 'http://goals:3013',
+  changeOrigin: true
+})
+
+
 router.use('/recipes', recipeProxy);
 router.use('/articles', articleProxy)
+router.use('/goals', goalProxy)
 
 export default router;
