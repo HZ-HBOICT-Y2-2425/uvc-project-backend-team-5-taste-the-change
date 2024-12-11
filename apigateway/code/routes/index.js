@@ -13,11 +13,6 @@ const articleProxy = createProxyMiddleware({
   changeOrigin: true
 })
 
-const rabbitItemsProxy = createProxyMiddleware({
-  target: 'http://rabbitItems:3013',
-  changeOrigin: true
-})
-
 router.use('/recipes', recipeProxy);
 router.use('/articles', articleProxy)
 
