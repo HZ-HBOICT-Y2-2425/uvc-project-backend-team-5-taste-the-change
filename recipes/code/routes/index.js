@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/recipes', cors(), getAllRecipes);
-router.get('/recipes/:id', cors(), getRecipeId)
+router.get('/recipes/:id', cors(), getRecipeId);
 
 
 export default router;
