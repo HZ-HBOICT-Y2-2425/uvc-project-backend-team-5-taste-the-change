@@ -1,10 +1,10 @@
 import mysql from 'mysql2/promise';
 
 const db = mysql.createPool({
-  host: 'mysql-server-recipes',  // Docker where MySQL is running 
+  host: 'mysql-server-articles',  // Docker where MySQL is running 
   user: 'root',       // MySQL user
   password: 'rootpassword', // MySQL password
-  database: 'recipe_app'  // Database name
+  database: 'articles_app'  // Database name
 });
 
 // Test connection

@@ -1,11 +1,16 @@
 CREATE DATABASE IF NOT EXISTS recipe_app;
 USE recipe_app;
 
-CREATE USER IF NOT EXISTS 'user'@'%' IDENTIFIED BY 'handbal@HS123';
+-- Create root user with password if it doesn't exist
+CREATE USER IF NOT EXISTS 'root'@'%' IDENTIFIED BY 'rootpassword';
 
-GRANT ALL PRIVILEGES ON recipe_app.* TO 'user'@'%';
+-- Grant privileges to the root user
+GRANT ALL PRIVILEGES ON recipe_app.* TO 'root'@'%';
+
+-- Ensure privileges are flushed
 FLUSH PRIVILEGES;
 
+-- Create table (if it doesn't exist already)
 CREATE TABLE IF NOT EXISTS recipes (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
