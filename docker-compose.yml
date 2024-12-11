@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   recipes:
     container_name: recipes
@@ -79,23 +78,25 @@ services:
     image: mysql:8.0
     environment:
       - MYSQL_DATABASE=${ARTICLES_DB_NAME}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Only use MYSQL_ROOT_PASSWORD
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Only root password, no MYSQL_USER
     ports:
-      - "3308:3306"  # Map container's 3306 to host's 3309
+      - "3309:3306"  # Map container's 3306 to host's 3309
     volumes:
       - ./articles/mysql/initdb:/docker-entrypoint-initdb.d
       - mysql-data-articles:/var/lib/mysql
+    networks:
+      - myarticles  # Ensure mysql-server-articles is on the same network as articles
 
   phpmyadmin:
     container_name: phpmyadmin
     image: phpmyadmin:latest
     networks:
       - myrecipes
-      - myarticles
+      - myarticles 
     environment:
-      - PMA_HOST=mysql-server-recipes, mysql-server-articles
+      - PMA_HOSTS=mysql-server-recipes,mysql-server-articles
       - PMA_USER=${MYSQL_USER}
-      - PMA_PASSWORD=${MYSQL_PASSWORD}
+      - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD}
     ports:
       - "8080:80"
 
