@@ -8,7 +8,19 @@
       "servings": 2,
       "diet": "Vegan",
       "time": 25,
-      "image": "https://www.sunglowkitchen.com/wp-content/uploads/2023/03/tofu-buddha-bowls-peanut-sauce-8-1.jpg"
+      "image": "https://www.sunglowkitchen.com/wp-content/uploads/2023/03/tofu-buddha-bowls-peanut-sauce-8-1.jpg",
+      "slug": "buddha_bowl",
+      "instructions": ["Cook the Base:",
+        "Rinse and cook your chosen grain (like quinoa, brown rice, or farro) according to package instructions. Once cooked, fluff it with a fork and set aside to cool slightly.",
+        "Prepare the Vegetables:",
+        "Wash and chop your selected vegetables into bite-sized pieces. If you're using any raw vegetables, slice them thinly. For roasted or sautéed vegetables, preheat your oven or a skillet, and cook the vegetables until tender and slightly caramelized.",
+        "Make the Protein:",
+        "If you're using legumes (like chickpeas or lentils), rinse and drain them. If you're preparing a plant-based protein (like tofu or tempeh), cut it into cubes and cook it by sautéing, baking, or grilling until golden and crispy.",
+        "Mix the Dressing:",
+        "In a bowl, whisk together your chosen dressing ingredients until well combined. Adjust flavors to your liking, keeping it balanced with acidity, sweetness, and saltiness.",
+        "Assemble the Bowl:",
+        "In a large bowl, layer the base grain, add the cooked vegetables, protein, and any additional toppings. Drizzle the dressing over the top, and toss gently or leave it layered for presentation before serving."
+      ]
     },
     {
       "name": "Pasta Primavera",
@@ -18,7 +30,19 @@
       "servings": 4,
       "diet": "Vegetarian",
       "time": 30,
-      "image": "https://www.cookingclassy.com/wp-content/uploads/2018/09/pasta-primavera-2.jpg"
+      "image": "https://www.cookingclassy.com/wp-content/uploads/2018/09/pasta-primavera-2.jpg",
+      "slug": "pasta_primavera",
+      "instructions": ["Cook the Pasta:",
+        "Boil a pot of salted water and cook the pasta according to package instructions until al dente. Once done, drain it, reserving a cup of the pasta water, and set it aside.",
+        "Sauté the Vegetables:",
+        "In a large skillet, heat olive oil over medium heat. Add the chopped vegetables and sauté until they are tender and slightly caramelized, stirring occasionally.",
+        "Add Flavor:",
+        "Once the vegetables are cooked, add minced garlic and any desired herbs or spices to the skillet. Sauté for an additional minute until fragrant.",
+        "Combine Pasta and Vegetables:",
+        "Add the drained pasta to the skillet with the sautéed vegetables. Toss everything together, adding reserved pasta water a little at a time until the desired consistency is reached.",
+        "Serve:",
+        "Remove from heat, and season with salt, pepper, or cheese as desired. Plate the pasta primavera and enjoy!"
+      ]
     },
     {
       "name": "Lentil Soup",
@@ -28,7 +52,19 @@
       "servings": 6,
       "diet": "Vegan",
       "time": 40,
-      "image": "https://simple-veganista.com/wp-content/uploads/2019/10/vegan-lentil-soup-recipe-5.jpg"
+      "image": "https://simple-veganista.com/wp-content/uploads/2019/10/vegan-lentil-soup-recipe-5.jpg",
+      "slug": "lentil_soup",
+      "instructions": ["Sauté Aromatics:",
+        "In a large pot, heat a splash of vegetable broth or oil over medium heat. Add diced onions, garlic, and any other aromatics you like, then sauté until the onions are translucent and fragrant.",
+        "Add Vegetables:",
+        "Stir in your chopped vegetables and cook for a few minutes until they begin to soften.",
+        "Combine Ingredients:",
+        "Add rinsed lentils, broth, and any seasonings or spices to the pot. Stir everything together to ensure even distribution.",
+        "Cook the Soup:",
+        "Bring the mixture to a boil, then reduce the heat to a simmer. Cover the pot and let it cook for about 25-30 minutes, or until the lentils and vegetables are tender.",
+        "Blend or Adjust:",
+        "Once cooked, you can use an immersion blender if you desire a creamier texture, or simply adjust the seasoning to taste. Serve hot and enjoy!"
+      ]
     },
     {
       "name": "Mushroom Risotto",
@@ -38,7 +74,19 @@
       "servings": 4,
       "diet": "Vegetarian",
       "time": 45,
-      "image": "https://lovingitvegan.com/wp-content/uploads/2020/08/Vegan-Mushroom-Risotto-Square.jpg"
+      "image": "https://lovingitvegan.com/wp-content/uploads/2020/08/Vegan-Mushroom-Risotto-Square.jpg",
+      "slug": "mushroom_risotto",
+      "instructions": ["Sauté Aromatics:",
+        "In a large pan, heat some olive oil over medium heat. Add chopped onions (or shallots) and garlic, and sauté until they become translucent and fragrant.",
+        "Cook Mushrooms:",
+        "Add sliced mushrooms to the pan. Cook until they release their moisture and become tender. Stir occasionally to ensure even cooking.",
+        "Toast Rice:",
+        "Add arborio rice to the pan and stir for a couple of minutes until the rice is coated and slightly toasted, absorbing the flavors from the aromatics and mushrooms.",
+        "Add Broth Gradually:",
+        "Slowly begin to add warm vegetable broth to the rice, one ladle at a time. Stir continuously and allow the rice to absorb the broth before adding more. Repeat this process until the rice is creamy and al dente.",
+        "Finish and Serve:",
+        "Remove the pan from heat and stir in grated cheese (if desired), fresh herbs, and season with salt and pepper. Let it rest for a minute before serving to allow the flavors to meld. Enjoy your risotto!"
+      ]
     },
     {
       "name": "Tofu Stir-Fry",
@@ -48,7 +96,19 @@
       "servings": 3,
       "diet": "Vegan",
       "time": 20,
-      "image": "https://littlespicejar.com/wp-content/uploads/2015/08/Sesame-Ginger-Tofu-Stir-Fry-1-735x1103.jpeg"
+      "image": "https://littlespicejar.com/wp-content/uploads/2015/08/Sesame-Ginger-Tofu-Stir-Fry-1-735x1103.jpeg",
+      "slug": "tofu_stir-fry",
+      "instructions": ["Press the Tofu:",
+        "Start by draining excess moisture from the tofu. Wrap it in a clean kitchen towel or paper towels and place a weight on top (like a skillet) for about 15-20 minutes to help remove moisture.",
+        "Cut and Marinate:",
+        "Once pressed, cut the tofu into cubes or slices according to your preference. If desired, marinate the tofu in your chosen sauce for at least 15-30 minutes to enhance the flavor.",
+        "Heat the Pan:",
+        "In a large skillet or wok, heat a small amount of oil over medium-high heat. Make sure the pan is hot before adding the tofu to achieve a nice sear.",
+        "Cook the Tofu:",
+        "Add the tofu pieces to the hot pan in a single layer. Cook for about 5-7 minutes, turning occasionally, until all sides are golden brown and crispy. Remove the tofu from the pan and set aside.",
+        "Stir-Fry Veggies:",
+        "In the same pan, add your vegetables and stir-fry for a few minutes until they are tender yet crisp. Add the cooked tofu back into the pan, pour in any remaining marinade or sauce, and toss everything together until heated through. Serve immediately."
+      ]
     },
     {
       "name": "Greek Salad",
@@ -58,7 +118,19 @@
       "servings": 2,
       "diet": "Vegetarian",
       "time": 15,
-      "image": "https://foodsharingvegan.com/wp-content/uploads/2022/06/Vegan-Greek-Salad-Plant-Based-on-a-Budget-1-2.jpg"
+      "image": "https://foodsharingvegan.com/wp-content/uploads/2022/06/Vegan-Greek-Salad-Plant-Based-on-a-Budget-1-2.jpg",
+      "slug": "greek_salad",
+      "instructions": ["Chop Ingredients:",
+        "Cut all vegetables (such as tomatoes, cucumbers, bell peppers, and red onions) into bite-sized pieces and place them in a large salad bowl.",
+        "Add Feta:",
+        "Crumble or cube the feta cheese and add it to the bowl with the chopped vegetables.",
+        "Combine Dressings:",
+        "In a small bowl, mix together your chosen olive oil, vinegar, and seasonings (such as oregano, salt, and pepper) to create the dressing.",
+        "Toss Salad:",
+        "Pour the dressing over the salad ingredients and gently toss everything together to ensure even coating.",
+        "Serve:",
+        "Let the salad sit for a few minutes to allow the flavors to meld, then serve it fresh, garnished with any additional herbs or toppings as desired."
+      ]
     },
     {
       "name": "Black Bean Chili",
@@ -68,7 +140,19 @@
       "servings": 5,
       "diet": "Vegan",
       "time": 35,
-      "image": "https://www.veggiessavetheday.com/wp-content/uploads/2022/08/Vegan-Black-Bean-Chili-FI-1200.jpg"
+      "image": "https://www.veggiessavetheday.com/wp-content/uploads/2022/08/Vegan-Black-Bean-Chili-FI-1200.jpg",
+      "slug": "black_bean_chili",
+      "instructions": ["Sauté Aromatics:",
+        "In a large pot, heat oil over medium heat and add diced onions, garlic, and any desired spices. Sauté until the onions are translucent and fragrant.",
+        "Add Vegetables:",
+        "Incorporate chopped vegetables (like bell peppers, carrots, or celery) into the pot. Stir and cook for a few minutes until they begin to soften.",
+        "Combine Ingredients:",
+        "Stir in the black beans along with any tomatoes or broth. Mix well to combine all ingredients evenly.",
+        "Simmer the Chili:",
+        "Bring the mixture to a boil, then reduce the heat to low. Cover the pot and let it simmer for at least 20-30 minutes, allowing flavors to meld, stirring occasionally.",
+        "Adjust Seasoning and Serve: ",
+        "Taste the chili and adjust seasoning if necessary. Once fully cooked, serve hot, optionally garnishing it with fresh herbs or avocado."
+      ]
     },
     {
       "name": "Caprese Sandwich",
@@ -78,7 +162,19 @@
       "servings": 1,
       "diet": "Vegetarian",
       "time": 10,
-      "image": "https://plantedinthekitchen.com/wp-content/uploads/2022/01/Vegan-Caprese-Panini-1.jpg"
+      "image": "https://plantedinthekitchen.com/wp-content/uploads/2022/01/Vegan-Caprese-Panini-1.jpg",
+      "slug": "caprese_sandwich",
+      "instructions": ["Toast the Bread:",
+        "Lightly toast the slices of bread you’ve chosen until they are golden and crisp.",
+        "Layer the Ingredients:",
+        "On one slice of the toasted bread, layer the fresh ingredients starting with a slice of cheese, followed by your selected vegetables and herbs. ",
+        "Drizzle with Dressing:",
+        "Add a drizzle of your preferred dressing or condiment to the layered vegetables for added flavor.",
+        "Top and Sandwich:",
+        "Place the second slice of toasted bread on top to complete the sandwich.",
+        "Cut and Serve:",
+        "Slice the sandwich in half or quarters for easier handling, and serve it immediately."
+      ]
     },
     {
       "name": "Sweet Potato Curry",
@@ -88,7 +184,19 @@
       "servings": 4,
       "diet": "Vegan",
       "time": 40,
-      "image": "https://elavegan.com/wp-content/uploads/2019/05/Healthy-Creamy-Coconut-Sweet-Potato-Curry-Recipe-with-spinach-and-rice.jpg"
+      "image": "https://elavegan.com/wp-content/uploads/2019/05/Healthy-Creamy-Coconut-Sweet-Potato-Curry-Recipe-with-spinach-and-rice.jpg",
+      "slug": "sweet_potato_curry",
+      "instructions": ["Sauté Aromatics:",
+        "Begin by heating oil in a large pan over medium heat. Add chopped onions, garlic, and ginger, and sauté until the onions become translucent and fragrant.",
+        "Add Spices:",
+        "Stir in your chosen spices and seasonings, cooking for a minute or until they are aromatic. This step helps to release the flavors of the spices.",
+        "Combine Ingredients:",
+        "Add diced sweet potatoes, any additional vegetables, and liquids (like broth or coconut milk) to the pan. Stir well to combine all the ingredients.",
+        "Simmer:",
+        "Bring the mixture to a gentle simmer. Cover the pan and cook until the sweet potatoes and any other vegetables are tender, stirring occasionally to prevent sticking.",
+        "Finish and Serve:",
+        "Once cooked, taste and adjust the seasoning if necessary. Remove from heat and serve hot, garnished with fresh herbs or toppings of your choice."
+      ]
     },
     {
       "name": "Spinach Lasagna",
@@ -98,7 +206,19 @@
       "servings": 6,
       "diet": "Vegetarian",
       "time": 60,
-      "image": "https://cdn.loveandlemons.com/wp-content/uploads/2023/12/vegetarian-lasagna-scaled.jpg"
+      "image": "https://cdn.loveandlemons.com/wp-content/uploads/2023/12/vegetarian-lasagna-scaled.jpg",
+      "slug": "spinach_lasagna",
+      "instructions": ["Prepare the Spinach Filling:",
+        "Sauté chopped garlic in olive oil until fragrant, then add fresh spinach and cook until wilted. Remove from heat, mix in ricotta cheese, and season with salt, pepper, and any desired herbs.",
+        "Prepare the Marinara Sauce:",
+        "In a separate pot, heat your marinara sauce on low, allowing it to simmer. You can add seasonings or spices to enhance the flavor if desired.",
+        "Assemble the Lasagna Layers:",
+        "In a baking dish, spread a layer of marinara sauce on the bottom. Place lasagna noodles over the sauce, then spread a layer of the spinach filling. Sprinkle with cheese if desired, followed by another layer of marinara sauce. Repeat this process until all ingredients are used, finishing with a layer of marinara sauce on top.",
+        "Add the Final Touches:",
+        "Sprinkle a generous layer of shredded cheese over the top layer of sauce to create a golden crust. Cover the dish with aluminum foil, avoiding contact with the cheese.",
+        "Bake the Lasagna:",
+        "Preheat your oven and bake the lasagna for the recommended time, removing the foil in the last 15 minutes to allow the cheese to brown. Once done, let it cool for a few minutes before slicing and serving."
+      ]
     },
     {
       "name": "Chicken Teriyaki",
@@ -108,7 +228,19 @@
       "servings": 4,
       "diet": "Flexitarian",
       "time": 20,
-      "image": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2024-05-chicken-teriyaki-190%2Fchicken-teriyaki-190-171-horizontal"
+      "image": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2024-05-chicken-teriyaki-190%2Fchicken-teriyaki-190-171-horizontal",
+      "slug": "chicken_teriyaki",
+      "instructions": ["Marinate the Chicken:",
+        "Combine the ingredients for the marinade in a bowl, then add the chicken pieces. Ensure the chicken is well coated and let it marinate for at least 30 minutes to absorb the flavors.",
+        "Cook the Chicken:",
+        "Heat a skillet or grill over medium-high heat. Remove the chicken from the marinade, allowing excess to drip off, then place it onto the hot surface.",
+        "Sear the Chicken:",
+        "Cook the chicken for several minutes on each side, or until it’s browned and reaches an internal temperature of 165°F (74°C). If desired, brush additional marinade onto the chicken during cooking for added flavor.",
+        "Prepare the Sauce:",
+        "While the chicken is cooking, pour the remaining marinade into a small saucepan and bring it to a boil. Reduce the heat and simmer until it thickens slightly for a glaze.",
+        "Serve:",
+        "Once the chicken is cooked through, remove it from the heat and let it rest for a few minutes. Slice the chicken and drizzle the thickened sauce over it before serving. Enjoy!"
+      ]
     },
     {
       "name": "Beef Stroganoff",
@@ -118,7 +250,19 @@
       "servings": 5,
       "diet": "Keto",
       "time": 30,
-      "image": "https://www.recipetineats.com/tachyon/2018/01/Beef-Stroganoff_8-1.jpg?resize=900%2C1260&zoom=0.72"
+      "image": "https://www.recipetineats.com/tachyon/2018/01/Beef-Stroganoff_8-1.jpg?resize=900%2C1260&zoom=0.72",
+      "slug": "beef_stroganoff",
+      "instructions": ["Once the chicken is cooked through, remove it from the heat and let it rest for a few minutes. Slice the chicken and drizzle the thickened sauce over it before serving. Enjoy!",
+        "In a large skillet, heat oil over medium-high heat. Add the thinly sliced beef and cook until browned on all sides, then remove it from the skillet and set aside.",
+        "Cook the Vegetables:",
+        "In the same skillet, add onions and mushrooms. Sauté until the onions become translucent and the mushrooms are tender, stirring occasionally.",
+        "Make the Sauce:",
+        "Lower the heat and sprinkle flour over the vegetables in the skillet. Stir to combine, then gradually add broth and stir until the mixture thickens. Add any additional seasonings and simmer for a few minutes.",
+        "Combine Ingredients:",
+        "Return the browned beef to the skillet, stirring to coat it with the sauce. Allow it to heat through.",
+        "Finish and Serve:",
+        "Stir in sour cream until well combined and heated through, then remove from heat. Serve over noodles or rice, as desired."
+      ]
     },
     {
       "name": "Coconut fish curry",
@@ -128,7 +272,19 @@
       "servings": 4,
       "diet": "Pescatarian",
       "time": 30,
-      "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/coconut-fish-curry-1823a09.jpg?quality=90&webp=true&resize=440,400"
+      "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/coconut-fish-curry-1823a09.jpg?quality=90&webp=true&resize=440,400",
+      "slug": "coconut_fish_curry",
+      "instructions": ["Prepare the Base:",
+        "Start by heating oil in a large pan or pot over medium heat. Sauté finely chopped onions, garlic, and ginger until they become translucent and fragrant. Add spices and stir for a few minutes to release their flavors.",
+        "Add Liquid:",
+        "Pour in your coconut milk and broth (if using) to the pan. Stir well to combine with the sautéed aromatics and spices. Bring the mixture to a gentle simmer.",
+        "Incorporate Vegetables:",
+        "Add any chopped vegetables you want to include in the curry. Allow them to cook in the simmering sauce until they are tender.",
+        "Add the Fish:",
+        "Gently place the fish pieces into the simmering sauce. Cover the pan and cook for a few minutes, allowing the fish to cook through and absorb the flavors of the curry.",
+        "Finish and Serve:",
+        "Check for seasoning and adjust as necessary. Once the fish is cooked and the sauce is well combined, remove from heat and serve hot, garnished with fresh herbs, if desired. Enjoy your dish!"
+      ]
     },
     {
       "name": "Chickpea marinara",
@@ -138,7 +294,19 @@
       "servings": 4,
       "diet": "Mediterranean",
       "time": 35,
-      "image": "https://www.themediterraneandish.com/wp-content/uploads/2024/08/TMD-Chickpea-Marinara-Leads-02.jpg"
+      "image": "https://www.themediterraneandish.com/wp-content/uploads/2024/08/TMD-Chickpea-Marinara-Leads-02.jpg",
+      "slug": "chickpea_marinara",
+      "instructions": ["Sauté Aromatics:",
+        "Heat olive oil in a large skillet over medium heat and add finely chopped onion and garlic. Sauté until the onion is translucent and the garlic is fragrant.",
+        "Add Chickpeas:",
+        "Stir in the drained and rinsed chickpeas, allowing them to heat through for a few minutes while stirring gently to combine with the aromatics.",
+        "Incorporate Marinara Sauce:",
+        "Pour in your marinara sauce and stir to combine with the chickpeas. Bring the mixture to a gentle simmer.",
+        "Season and Simmer:",
+        "Add your chosen seasonings and let the sauce simmer for about 10-15 minutes, stirring occasionally, to allow the flavors to meld and the chickpeas to absorb the sauce.",
+        "Serve:",
+        "Once the sauce has thickened slightly, remove from heat and serve it over your preferred pasta or grain, garnishing as desired. Enjoy!"
+      ]
     }
   ]
 }
