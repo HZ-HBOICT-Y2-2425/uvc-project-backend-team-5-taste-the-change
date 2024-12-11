@@ -1,29 +1,49 @@
 {
   "articles": [
     {
-      "name": "Understanding SvelteKit",
-      "imgUrl": "https://example.com/images/sveltekit.jpg",
-      "info": "Learn the fundamentals of SvelteKit and how it simplifies building web applications."
+      "name": "10 Tips for Reducing Food Waste at Home",
+      "imgUrl": "https://green.org/wp-content/uploads/2024/01/Food-Waste-Reduction.jpg",
+      "info": "Discover practical ways to minimize food waste and contribute to a healthier planet."
     },
     {
-      "name": "The Power of Reactive Programming",
-      "imgUrl": "https://example.com/images/reactive-programming.jpg",
-      "info": "Dive into reactive programming concepts and how they are implemented in Svelte."
+      "name": "How a Plant-Based Diet Helps Lower Your Carbon Footprint",
+      "imgUrl": "https://static.wixstatic.com/media/5fdeba_8550e0de5b4a4670a36fa08eb0291e62~mv2.png/v1/fill/w_1000,h_563,al_c,q_90,usm_0.66_1.00_0.01/5fdeba_8550e0de5b4a4670a36fa08eb0291e62~mv2.png",
+      "info": "Learn how incorporating more plant-based meals can significantly reduce your CO2 emissions."
     },
     {
-      "name": "State Management in Svelte",
-      "imgUrl": "https://example.com/images/state-management.jpg",
-      "info": "Explore various approaches to manage state in Svelte applications."
+      "name": "The Connection Between Food Choices and Climate Change",
+      "imgUrl": "https://www.fidelity.com.sg/static/singapore/images/article/sustainable-investing/deforestation-620x360.jpg",
+      "info": "Explore how our food production and consumption impact the environment and climate."
     },
     {
-      "name": "SvelteKit and SSR: A Match Made in Heaven",
-      "imgUrl": "https://example.com/images/sveltekit-ssr.jpg",
-      "info": "Discover the power of server-side rendering (SSR) in SvelteKit applications."
+      "name": "Eco-Friendly Meal Planning: Save Money and the Planet",
+      "imgUrl": "https://veganfamilykitchen.com/wp-content/uploads/2021/04/eco-friendly-eating-habits-4.jpg",
+      "info": "Tips and tricks for creating sustainable meal plans that are budget-friendly and eco-conscious."
     },
     {
-      "name": "Deploying SvelteKit Applications",
-      "imgUrl": "https://example.com/images/sveltekit-deployment.jpg",
-      "info": "Learn how to deploy SvelteKit apps to various hosting platforms like Vercel and Netlify."
+      "name": "The Hidden Carbon Cost of Meat Production",
+      "imgUrl": "https://interface.fh-potsdam.de/klimagrafik/meat-eq-heat/assets/images/image_heatMeat_1.png",
+      "info": "Uncover the environmental impact of meat production and how reducing consumption can help."
+    },
+    {
+      "name": "Sustainable Superfoods: What to Eat for a Greener Future",
+      "imgUrl": "https://www.agci.org/wp-content/uploads/2024/03/Harvesting-produce-in-field.jpeg",
+      "info": "Discover superfoods that are both nutritious and sustainable for the environment."
+    },
+    {
+      "name": "Composting 101: Turning Food Waste into Garden Gold",
+      "imgUrl": "https://releaf.in/wp-content/uploads/2024/01/kitchenwastecompost.jpg",
+      "info": "Learn the basics of composting and how it helps reduce waste and enrich the soil."
+    },
+    {
+      "name": "From Farm to Table: Reducing Food Miles for a Greener Plate",
+      "imgUrl": "https://www.crowdfarming.com/blog/wp-content/uploads/2022/06/Carbon-footprint-new-crea.webp",
+      "info": "Understand the concept of food miles and how choosing local produce benefits the planet."
+    },
+    {
+      "name": "Cooking for Change: Recipes with a Lower Carbon Footprint",
+      "imgUrl": "https://futuringorange.com/wp-content/uploads/2019/09/low-emission-recipe.jpg?w=600",
+      "info": "Try delicious, eco-friendly recipes designed to minimize environmental impact."
     }
   ]
 }
