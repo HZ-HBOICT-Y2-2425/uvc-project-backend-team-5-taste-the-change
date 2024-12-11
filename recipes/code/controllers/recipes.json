@@ -1,6 +1,7 @@
 {
   "recipes": [
     {
+      "id": 1,
       "name": "Buddha Bowl",
       "description": "A vibrant and nourishing Vegan Buddha Bowl is a colorful medley of fresh vegetables, whole grains, and protein-rich legumes, all artfully arranged in a single dish. This wholesome meal typically includes a base of quinoa or brown rice, topped with a variety of seasonal greens, roasted or sautéed vegetables, and a generous portion of chickpeas or black beans. Drizzled with a zesty tahini or avocado dressing, this bowl not only bursts with flavor but also provides a balanced mix of nutrients, making it the perfect choice for a quick lunch or a hearty dinner. Enjoy the harmony of textures and tastes while embracing a healthy, plant-based lifestyle!",
       "ingredients": ["quinoa", "chickpeas", "avocado", "spinach", "carrot", "hummus"],
@@ -23,6 +24,7 @@
       ]
     },
     {
+      "id": 2,
       "name": "Pasta Primavera",
       "description": "A vibrant and wholesome dish, Vegetarian Pasta Primavera showcases a medley of fresh seasonal vegetables sautéed to perfection and tossed with al dente pasta. Dressed in a light, garlic-infused olive oil or a rich tomato sauce, this colorful pasta is not only a feast for the eyes but also a celebration of fresh flavors. Ideal for a quick weeknight dinner or an elegant gathering, it can be easily customized with your favorite vegetables and herbs, making it a versatile addition to any meal. Enjoy a taste of spring in every bite!",
       "ingredients": ["penne pasta", "bell peppers", "zucchini", "parmesan", "olive oil", "basil"],
@@ -45,6 +47,7 @@
       ]
     },
     {
+      "id": 3,
       "name": "Lentil Soup",
       "description": "This hearty and nourishing vegan lentil soup is a delightful blend of nutrient-rich lentils, vibrant vegetables, and aromatic spices. Perfect for a cozy meal, it features tender carrots, celery, and tomatoes simmered in a savory broth, enhanced by garlic, onions, and a touch of cumin. Packed with protein and fiber, this soup is not only satisfying but also incredibly easy to prepare, making it an ideal choice for busy weeknights. Enjoy it with a crusty piece of bread for a wholesome, comforting dish that warms the soul.",
       "ingredients": ["red lentils", "onion", "garlic", "carrot", "celery", "vegetable broth"],
@@ -67,6 +70,7 @@
       ]
     },
     {
+      "id": 4,
       "name": "Mushroom Risotto",
       "description": "Indulge in a creamy and earthy Vegetarian Mushroom Risotto, a delightful dish that celebrates the rich flavors of fresh mushrooms. Arborio rice is slowly cooked to perfection in a savory vegetable broth, allowing it to absorb all the aromatic goodness. Sautéed mushrooms and onions add depth and a hearty texture, while a touch of white wine enhances the dish's complexity. Finished with a sprinkle of freshly grated Parmesan and a hint of fresh herbs, this risotto is a comforting and satisfying meal that is both elegant and easy to prepare, perfect for any occasion. Enjoy a taste of Italy in every bite!",
       "ingredients": ["arborio rice", "mushrooms", "parmesan", "onion", "garlic", "white wine"],
@@ -89,6 +93,7 @@
       ]
     },
     {
+      "id": 5,
       "name": "Tofu Stir-Fry",
       "description": "Indulge in a vibrant and flavorful vegan tofu stir-fry that brings the best of plant-based cuisine to your table. This quick and easy dish features crispy golden tofu, sautéed with a colorful medley of fresh vegetables, such as bell peppers, broccoli, and snap peas, all tossed in a savory soy sauce and ginger-infused marinade. Perfectly seasoned and served over a bed of fluffy rice or quinoa, this wholesome stir-fry is not only packed with protein and nutrition but also bursting with delightful textures and tastes. Enjoy this satisfying meal that’s as delightful to eat as it is to prepare!",
       "ingredients": ["tofu", "broccoli", "carrot", "soy sauce", "sesame oil", "ginger"],
@@ -111,6 +116,7 @@
       ]
     },
     {
+      "id": 6,
       "name": "Greek Salad",
       "description": "Experience the vibrant flavors of the Mediterranean with this refreshing Vegetarian Greek Salad. Bursting with color and nutrition, it features a delightful combination of ripe tomatoes, crisp cucumbers, and tangy red onions, all tossed together with Kalamata olives and creamy feta cheese. Drizzled with a zesty blend of olive oil, lemon juice, and fragrant herbs like oregano, this salad is a perfect accompaniment to any meal or a light main dish on its own. Enjoy the freshness and simplicity of this classic Greek favorite!",
       "ingredients": ["feta cheese", "tomatoes", "cucumber", "olives", "red onion", "oregano"],
@@ -133,6 +139,7 @@
       ]
     },
     {
+      "id": 7,
       "name": "Black Bean Chili",
       "description": "This hearty Vegan Black Bean Chili is a delicious and nutritious dish, perfect for cozy nights or meal prep. Packed with protein-rich black beans, vibrant vegetables, and aromatic spices, it delivers a robust flavor without any meat. A touch of cumin, chili powder, and fresh herbs elevate the taste, while diced tomatoes and bell peppers add a satisfying sweetness. Serve it hot, topped with avocado, cilantro, or a squeeze of lime for a burst of freshness. This chili is not only vegan but also gluten-free and incredibly easy to make, making it a go-to comfort food for everyone!",
       "ingredients": ["black beans", "onion", "garlic", "tomatoes", "corn", "chili powder"],
@@ -155,6 +162,7 @@
       ]
     },
     {
+      "id": 8,
       "name": "Caprese Sandwich",
       "description": "Indulge in the fresh flavors of our Vegetarian Caprese Sandwich, a delightful assembly of ripe tomatoes, creamy mozzarella, and fragrant basil leaves nestled between crusty ciabatta or soft artisan bread. Drizzled with a balsamic reduction and a touch of extra virgin olive oil, this sandwich offers a perfect balance of sweetness and tang. Ideal for a quick lunch or a light dinner, it's a vibrant, satisfying option that highlights the simplicity and essence of Italian cuisine. Enjoy it fresh and warm for a burst of flavor in every bite!",
       "ingredients": ["mozzarella", "tomato", "basil", "ciabatta bread", "balsamic glaze"],
@@ -177,6 +185,7 @@
       ]
     },
     {
+      "id": 9,
       "name": "Sweet Potato Curry",
       "description": "Indulge in this vibrant vegan sweet potato curry, a hearty and aromatic dish that perfectly balances flavors and textures. Creamy coconut milk melds with warming spices like cumin, turmeric, and ginger, creating a rich sauce that envelops tender cubes of sweet potato, hearty chickpeas, and vibrant vegetables. This comforting curry is not only a feast for the senses but also packed with nutrition, making it a wholesome option for any meal. Serve it over fluffy rice or with warm naan for a satisfying and delightful culinary experience.",
       "ingredients": ["sweet potato", "coconut milk", "spinach", "onion", "curry paste"],
@@ -199,6 +208,7 @@
       ]
     },
     {
+      "id": 10,
       "name": "Spinach Lasagna",
       "description": "Delight in layers of tender pasta, creamy ricotta, and vibrant spinach, all enveloped in a rich marinara sauce. This nourishing vegetarian spin on a classic lasagna is baked to perfection, melding flavors of garlic, herbs, and bubbling mozzarella cheese. Ideal for family gatherings or cozy dinners, this dish offers a wholesome and satisfying meal that will please both vegetarians and meat lovers alike. Enjoy a slice of comfort that's as beautiful as it is delicious!",
       "ingredients": ["lasagna sheets", "spinach", "ricotta", "tomato sauce", "parmesan"],
@@ -221,6 +231,7 @@
       ]
     },
     {
+      "id": 11,
       "name": "Chicken Teriyaki",
       "description": "Teriyaki chicken is a flavorful dish featuring tender chicken pieces marinated in a sweet and savory sauce made from soy sauce, mirin, and sugar. Grilled or pan-seared to perfection, it's often garnished with sesame seeds and green onions, offering a delicious balance of umami and sweetness that pairs beautifully with rice and vegetables.",
       "ingredients": ["chicken", "soy sauce", "mirin", "sake", "sugar"],
@@ -243,6 +254,7 @@
       ]
     },
     {
+      "id": 12,
       "name": "Beef Stroganoff",
       "description": "Beef Stroganoff is a classic Russian dish featuring tender strips of beef sautéed with onions and mushrooms in a creamy sauce, typically flavored with mustard and Worcestershire sauce. Served over egg noodles or rice, this comforting meal combines rich flavors and a velvety texture, making it a timeless favorite.",
       "ingredients": ["steak", "onion", "broth", "mustard", "sour cream", "flour", "mushrooms"],
@@ -265,6 +277,7 @@
       ]
     },
     {
+      "id": 13,
       "name": "Coconut fish curry",
       "description": "Coconut fish curry is a flavorful and aromatic dish featuring tender fish fillets simmered in a creamy coconut milk sauce, infused with spices like turmeric, ginger, and garlic. This vibrant curry is often enhanced with fresh herbs, lime juice, and vegetables, providing a perfect balance of heat and creaminess. Serve it over rice for a delightful meal that transports you to tropical shores.",
       "ingredients": ["hake", "prawns", "coconut milk", "rice", "garlic", "ginger", "onion", "sugar"],
@@ -287,6 +300,7 @@
       ]
     },
     {
+      "id": 14,
       "name": "Chickpea marinara",
       "description": "Chickpea Marinara is a hearty and nutritious dish that combines tender chickpeas with a rich, homemade marinara sauce. Packed with protein and fiber, this satisfying meal features sautéed garlic and onions blended with crushed tomatoes, fresh basil, and a hint of oregano, all simmered to perfection. Serve it over pasta or enjoy it on its own for a delicious vegetarian option that’s both comforting and flavorful.",
       "ingredients": ["chickpeas", "mozzarella", "romano cheese", "onion", "garlic", "marinara", "parsley"],
