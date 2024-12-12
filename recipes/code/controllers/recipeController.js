@@ -24,6 +24,7 @@ export function getRecipeId(req, res)  {
     res.status(200).json({
       id: recipe.id,
       name: recipe.name,
+      description: recipe.description,
       ingredients: recipe.ingredients,
       emission_per_meal: recipe.emission_per_meal,
       servings: recipe.servings,
