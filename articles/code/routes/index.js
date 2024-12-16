@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/articles', cors(), getAllArticles);
-router.get('/articles/:id', cors(), getArticleId)
+router.get('/articles/:id', cors(), getArticleId);
 
 
 export default router;
