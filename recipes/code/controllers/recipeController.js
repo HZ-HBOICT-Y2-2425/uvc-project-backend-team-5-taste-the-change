@@ -22,12 +22,17 @@ export function getRecipeId(req, res)  {
 
   try {
     res.status(200).json({
+      id: recipe.id,
       name: recipe.name,
+      description: recipe.description,
       ingredients: recipe.ingredients,
       emission_per_meal: recipe.emission_per_meal,
       servings: recipe.servings,
       diet: recipe.diet,
-      time: recipe.time
+      time: recipe.time, 
+      image: recipe.image,
+      slug: recipe.slug,
+      instructions: recipe.instructions
     });
   } catch (err) {
     res.status(404).send(err)
