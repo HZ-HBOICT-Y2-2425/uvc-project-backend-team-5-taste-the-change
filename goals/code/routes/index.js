@@ -1,5 +1,5 @@
 import express from 'express';
-import { checkGoalStatus, getRandomGoals, pickGoal } from '../controllers/goalsController.js';
+import { getRandomGoals, pickGoal } from '../controllers/goalsController.js';
 import cors from 'cors';
 
 const router = express.Router();
