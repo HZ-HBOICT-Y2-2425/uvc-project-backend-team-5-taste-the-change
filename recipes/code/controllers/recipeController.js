@@ -8,68 +8,29 @@ export async function getAllRecipes(req, res) {
     const [results] = await db.query(query); // Execute the query using async/await
     res.status(200).json(results); // Send the results back as a JSON response
   } catch (err) {
-    console.error('Error fetching data:', err);
-    res.status(500).json({ error: 'Internal Server Error' });
+    next(err);
   }
 }
 
+export function getRecipeId(req, res)  {
+  const id = parseInt(req.params.id, 10); // Convert the id to a number
+  const recipe = data.recipes.find(item => item.id === id); // Assuming your recipes have an "id" field
 
-// import mysql from 'mysql2/promise';
-
-// const recipe = mysql.createPool({
-//   host: process.env.MYSQL_HOST || 'localhost',
-//   user: process.env.MYSQL_USER || 'root',
-//   password: process.env.MYSQL_PASSWORD || "dSK$ME*b+=;3&Pr5T,LC/B",
-//   database: process.env.MYSQL_DATABASE || 'recipe_app',
-//   port: 3306
-// });
-
-
-
-// // Function to fetch all recipes
-// export async function getAllRecipes(req, res, next) {
-//   try {
-//     const [recipeRow] = await recipe.query('SELECT * FROM recipes');
-//     res.status(200).json(recipeRow);
-//   } catch (err) {
-//     next(err);
-//   }
-// }
-
-// // Function to fetch a recipe by ID
-// export async function getRecipeId(req, res, next) {
-//   const id = parseInt(req.params.id, 10);
-
-//   try {
-//     const [recipeRow] = await recipe.query('SELECT * FROM recipes WHERE id = ?', [id]);
-
-//     if (recipeRow.length === 0) {
-//       return res.status(404).send('Recipe not found');
-//     }
-
-//     const recipe = recipeRow[0];
-//     res.status(200).json({
-//       name: recipe.name,
-//       ingredients: recipe.ingredients.split(','),
-//       emission_per_meal: recipe.emission_per_meal,
-//       servings: recipe.servings,
-//       diet: recipe.diet,
-//       time: recipe.time
-//     });
-//   } catch (err) {
-//     next(err);
-//   }
-// }
-
-
-// // Test connection
-// async function testConnection() {
-//   try {
-//     const [recipeRow] = await recipe.query('SELECT * FROM recipes');
-//     console.log('Database connection successful', recipeRow);
-//   } catch (err) {
-//     console.error('Error connecting to the database:', err.message);
-//   }
-// }
-
-// testConnection();
+  try {
+    res.status(200).json({
+      id: recipe.id,
+      name: recipe.name,
+      description: recipe.description,
+      ingredients: recipe.ingredients,
+      emission_per_meal: recipe.emission_per_meal,
+      servings: recipe.servings,
+      diet: recipe.diet,
+      time: recipe.time, 
+      image: recipe.image,
+      slug: recipe.slug,
+      instructions: recipe.instructions
+    });
+  } catch (err) {
+    res.status(404).send(err)
+  }
+};
