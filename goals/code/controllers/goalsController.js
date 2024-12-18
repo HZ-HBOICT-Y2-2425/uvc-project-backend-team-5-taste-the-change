@@ -1,42 +1,52 @@
+import db from '../goals.js'; // Import the MySQL connection
 
-import { readFile } from 'fs/promises';
-
-let data;
-
-(async () => {
-  data = JSON.parse(
-    await readFile(
-      new URL('./goals.json', import.meta.url)
-    )
-  );
-})();
-
+// Get random goals
 export async function getRandomGoals(req, res, next) {
   try {
-    const goals = data.goals;
-    const allGoals = [...goals.beginner, ...goals.intermediate, ...goals.advanced];
-    const randomGoals = allGoals.sort(() => 0.5 - Math.random()).slice(0, 3);
+    // Fetch all goals from the database
+    const query = 'SELECT * FROM goals';
+    const [results] = await db.query(query);
 
-    //set header before response
+    // Shuffle and select 3 random goals
+    const randomGoals = results.sort(() => 0.5 - Math.random()).slice(0, 3);
+
     res.status(200).json(randomGoals);
   } catch (err) {
-    next(err);
+    console.error('Error fetching random goals:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 }
 
+// Pick a specific goal by ID
 export async function pickGoal(req, res, next) {
   try {
     const id = parseInt(req.params.id, 10);
-    const goals = data.goals;
-    const goal = goals.beginner.find(g => g.id === id) || goals.intermediate.find(g => g.id === id) || goals.advanced.find(g => g.id === id);
 
-    if (goal) {
-      goal.picked = false; // Assuming you need to update this in the actual database or JSON file
-      res.status(200).json({ message: 'Goal picked!' });
+    const currentDate = new Date()
+
+    // Fetch the goal by ID
+    const query = 'SELECT * FROM goals WHERE id = ?';
+    const [results] = await db.query(query, [id]);
+
+    if (results.length > 0) {
+      const goal = results[0];
+
+      // Update the goal as "picked" (assuming there is a `picked` column in your database)
+      const updateQuery = 'UPDATE goals SET picked = true, last_picked = ? WHERE id = ?';
+      await db.query(updateQuery, [currentDate, id]);
+
+      res.status(200).json({
+        id: goal.id,
+        goal: goal.goal, // The goal name/description
+        description: goal.description, // The description of the goal
+        picked: true, // Mark it as picked
+        last_picked: goal.last_picked
+      });
     } else {
       res.status(404).json({ error: 'Goal not found!' });
     }
   } catch (err) {
-    next(err);
+    console.error('Error picking goal:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 }
