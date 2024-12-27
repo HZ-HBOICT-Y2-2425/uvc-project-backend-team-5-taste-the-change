@@ -1,12 +1,16 @@
-import db from '../recipes.js'; // Import the MySQL connection
 
-// Get all recipes
+import { readFile } from 'fs/promises';
+const data = JSON.parse(
+  await readFile(
+    new URL('./recipes.json', import.meta.url)
+  )
+);
+
+
 export async function getAllRecipes(req, res) {
-  const query = 'SELECT * FROM recipes'; // SQL query to fetch all records
-
   try {
-    const [results] = await db.query(query); // Execute the query using async/await
-    res.status(200).json(results); // Send the results back as a JSON response
+    //set header before response
+    res.status(200).send(data);
   } catch (err) {
     next(err);
   }
