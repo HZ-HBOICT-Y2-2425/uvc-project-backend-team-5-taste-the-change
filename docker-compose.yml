@@ -5,20 +5,11 @@ services:
     volumes:
       - ./recipes/code:/usr/src/app
     networks:
-      - myrecipes
+      - msexample
     ports:
-      - "${RECIPES_PORT}:${RECIPES_PORT}"
+      - "3012:3012"
     working_dir: /usr/src/app
     command: bash -c "npm audit && npm install --no-audit && npm run dev"
-    environment:
-      - RECIPES_DB_HOST=mysql-server-recipes
-      - RECIPES_DB_NAME=${RECIPES_DB_NAME}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-
-    depends_on:
-      - mysql-server-recipes
     restart: always
 
   articles:
@@ -27,19 +18,53 @@ services:
     volumes:
       - ./articles/code:/usr/src/app
     networks:
-      - myarticles
+      - msexample
     ports:
-      - "${ARTICLES_PORT}:${ARTICLES_PORT}"
+      - "3011:3011"
+    working_dir: /usr/src/app
+    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+    restart: always
+
+  goals:
+    container_name: goals
+    build: ./goals
+    volumes:
+      - ./goals/code:/usr/src/app
+    networks:
+      - mygoals
+    ports:
+      - "${GOALS_PORT}:${GOALS_PORT}"
     working_dir: /usr/src/app
     command: bash -c "npm audit && npm install --no-audit && npm run dev"
     environment:
-      - ARTICLES_DB_HOST=mysql-server-articles
-      - ARTICLES_DB_NAME=${ARTICLES_DB_NAME}
+      - GOALS_DB_HOST=mysql-server-goals
+      - GOALS_DB_NAME=${GOALS_DB_NAME}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     depends_on:
-      - mysql-server-articles
+      - mysql-server-goals
+    restart: always
+
+  users:
+    container_name: users
+    build: ./users
+    volumes:
+      - ./users/code:/usr/src/app
+    networks:
+      - myusers
+    ports:
+      - "${USERS_PORT}:${USERS_PORT}"
+    working_dir: /usr/src/app
+    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+    environment:
+      - USERS_DB_HOST=mysql-server-users
+      - USERS_DB_NAME=${USERS_DB_NAME}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      - mysql-server-users
     restart: always
 
   gateway:
@@ -48,8 +73,9 @@ services:
     volumes:
       - ./apigateway/code:/usr/src/app
     networks:
-      - myrecipes
-      - myarticles
+      - msexample
+      - mygoals
+      - myusers
     ports:
       - "3010:3010"
     working_dir: /usr/src/app
@@ -57,56 +83,57 @@ services:
     environment:
       - PORT=3010
     depends_on:
-      - recipes
-      - articles
+      - goals
+      - users
 
-  mysql-server-recipes:
-    container_name: mysql-server-recipes
+  mysql-server-goals:
+    container_name: mysql-server-goals
     image: mysql:8.0
-    networks:
-      - myrecipes
     environment:
-      - MYSQL_DATABASE=${RECIPES_DB_NAME}
+      - MYSQL_DATABASE=${GOALS_DB_NAME}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Only root password, no MYSQL_USER
     ports:
-      - "3306:3306"
+      - "3308:3306"  # Map container's 3306 to host's 3309
     volumes:
-      - ./recipes/mysql/initdb:/docker-entrypoint-initdb.d  # Mount init SQL files
-      - mysql-data-recipes:/var/lib/mysql
+      - ./goals/mysql/initdb:/docker-entrypoint-initdb.d
+      - mysql-data-goals:/var/lib/mysql
+    networks:
+      - mygoals  # Ensure mysql-server-articles is on the same network as articles
 
-  mysql-server-articles:
-    container_name: mysql-server-articles
+  mysql-server-users:
+    container_name: mysql-server-users
     image: mysql:8.0
     environment:
-      - MYSQL_DATABASE=${ARTICLES_DB_NAME}
+      - MYSQL_DATABASE=${USERS_DB_NAME}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Only root password, no MYSQL_USER
     ports:
       - "3309:3306"  # Map container's 3306 to host's 3309
     volumes:
-      - ./articles/mysql/initdb:/docker-entrypoint-initdb.d
-      - mysql-data-articles:/var/lib/mysql
-    networks:
-      - myarticles  # Ensure mysql-server-articles is on the same network as articles
+      - ./users/mysql/initdb:/docker-entrypoint-initdb.d
+      - mysql-data-users:/var/lib/mysql
 
   phpmyadmin:
     container_name: phpmyadmin
     image: phpmyadmin:latest
     networks:
-      - myrecipes
-      - myarticles 
+      - mygoals
+      - myusers
     environment:
-      - PMA_HOSTS=mysql-server-recipes,mysql-server-articles
+      - PMA_HOSTS=mysql-server-goals
+      - PMA_HOSTS=mysql-server-users
       - PMA_USER=${MYSQL_USER}
       - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD}
     ports:
       - "8080:80"
 
 networks:
-  myrecipes:
+  msexample:
     driver: bridge
-  myarticles:
+  mygoals:
+    driver: bridge
+  myusers:
     driver: bridge
 
 volumes:
-  mysql-data-recipes:
-  mysql-data-articles:
+  mysql-data-goals:
+  mysql-data-users:
