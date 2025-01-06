@@ -77,40 +77,40 @@ services:
     networks:
       - mygoals  # Ensure mysql-server-articles is on the same network as articles
 
-  leafAmount:
-    container_name: leafAmount
-    build: ./leafAmount
+  leafs:
+    container_name: leafs
+    build: ./leafs
     volumes:
-      - ./leafAmount/code:/usr/src/app
+      - ./leafs/code:/usr/src/app
     networks:
-      - myLeafAmount
+      - myLeafs
     ports:
-      - "${LEAFAMOUNT_PORT}:${LEAFAMOUNT_PORT}"
+      - "${LEAFS_PORT}:${LEAFS_PORT}"
     working_dir: /usr/src/app
     command: bash -c "npm audit && npm install --no-audit && npm run dev"
     environment:
-      - LEAFAMOUNT_DB_HOST=mysql-server-leafAmount
-      - LEAFAMOUNT_DB_NAME=${LEAFAMOUNT_DB_NAME}
+      - LEAFS_DB_HOST=mysql-server-leafs
+      - LEAFS_DB_NAME=${LEAFS_DB_NAME}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     depends_on:
-      - mysql-server-leafAmount
+      - mysql-server-leafs
     restart: always
 
-  mysql-server-leafAmount:
-    container_name: mysql-server-leafAmount
+  mysql-server-leafs:
+    container_name: mysql-server-leafs
     image: mysql:8.0
     environment:
-      - MYSQL_DATABASE=${LEAFAMOUNT_DB_NAME}
-      - MYSQL_ROOT_PASSWORD=${LEAFAMOUNT_ROOT_PASSWORD}  # Only root password, no MYSQL_USER
+      - MYSQL_DATABASE=${LEAFS_DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Only root password, no MYSQL_USER
     ports:
       - "3309:3306"  # Map container's 3306 to host's 3309
     volumes:
       - ./leafs/mysql/initdb:/docker-entrypoint-initdb.d
       - mysql-data-leafs:/var/lib/mysql
     networks:
-      - myLeafAmount  # Ensure mysql-server-articles is on the same network as articles
+      - myLeafs  # Ensure mysql-server-articles is on the same network as articles
 
   phpmyadmin:
     container_name: phpmyadmin
@@ -129,7 +129,7 @@ networks:
     driver: bridge
   mygoals:
     driver: bridge
-  myLeafAmount:
+  myLeafs:
     driver: bridge
 
 volumes:
