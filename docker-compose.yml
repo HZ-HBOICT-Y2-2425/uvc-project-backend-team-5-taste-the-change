@@ -66,6 +66,27 @@ services:
     depends_on:
       - mysql-server-users
     restart: always
+  
+  leafs:
+    container_name: leafs
+    build: ./leafs
+    volumes:
+      - ./leafs/code:/usr/src/app
+    networks:
+      - myLeafs
+    ports:
+      - "${LEAFS_PORT}:${LEAFS_PORT}"
+    working_dir: /usr/src/app
+    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+    environment:
+      - LEAFS_DB_HOST=mysql-server-leafs
+      - LEAFS_DB_NAME=${LEAFS_DB_NAME}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      - mysql-server-leafs
+    restart: always
 
   gateway:
     container_name: apigateway
@@ -107,12 +128,26 @@ services:
       - MYSQL_DATABASE=${USERS_DB_NAME}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Only root password, no MYSQL_USER
     ports:
-      - "3309:3307"  # Map container's 3307 to host's 3309
+      - "3310:3306"  # Map container's 3307 to host's 3309
     volumes:
       - ./users/mysql/initdb:/docker-entrypoint-initdb.d
       - mysql-data-users:/var/lib/mysql
     networks:
       - myusers
+
+  mysql-server-leafs:
+    container_name: mysql-server-leafs
+    image: mysql:8.0
+    environment:
+      - MYSQL_DATABASE=${LEAFS_DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Only root password, no MYSQL_USER
+    ports:
+      - "3309:3306"  # Map container's 3306 to host's 3309
+    volumes:
+      - ./leafs/mysql/initdb:/docker-entrypoint-initdb.d
+      - mysql-data-leafs:/var/lib/mysql
+    networks:
+      - myLeafs  # Ensure mysql-server-articles is on the same network as articles
 
   phpmyadmin:
     container_name: phpmyadmin
@@ -135,7 +170,10 @@ networks:
     driver: bridge
   myusers:
     driver: bridge
+  myLeafs:
+    driver: bridge
 
 volumes:
  mysql-data-goals:
  mysql-data-users:
+ mysql-data-leafs:
