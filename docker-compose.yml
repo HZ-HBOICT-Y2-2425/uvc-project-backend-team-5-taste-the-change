@@ -107,10 +107,12 @@ services:
       - MYSQL_DATABASE=${USERS_DB_NAME}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Only root password, no MYSQL_USER
     ports:
-      - "3309:3306"  # Map container's 3306 to host's 3309
+      - "3309:3307"  # Map container's 3307 to host's 3309
     volumes:
       - ./users/mysql/initdb:/docker-entrypoint-initdb.d
       - mysql-data-users:/var/lib/mysql
+    networks:
+      - myusers
 
   phpmyadmin:
     container_name: phpmyadmin
@@ -135,5 +137,5 @@ networks:
     driver: bridge
 
 volumes:
-  mysql-data-goals:
-  mysql-data-users:
+ mysql-data-goals:
+ mysql-data-users:
