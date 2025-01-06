@@ -25,23 +25,6 @@ services:
     command: bash -c "npm audit && npm install --no-audit && npm run dev"
     restart: always
 
-  gateway:
-    container_name: apigateway
-    build: ./apigateway
-    volumes:
-      - ./apigateway/code:/usr/src/app
-    networks:
-      - msexample
-      - mygoals
-    ports:
-      - "3010:3010"
-    working_dir: /usr/src/app
-    command: bash -c "npm audit && npm install --no-audit && npm run dev"
-    environment:
-      - PORT=3010
-    depends_on:
-      - goals
-
   goals:
     container_name: goals
     build: ./goals
@@ -63,20 +46,27 @@ services:
       - mysql-server-goals
     restart: always
 
-  mysql-server-goals:
-    container_name: mysql-server-goals
-    image: mysql:8.0
-    environment:
-      - MYSQL_DATABASE=${GOALS_DB_NAME}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Only root password, no MYSQL_USER
-    ports:
-      - "3308:3306"  # Map container's 3306 to host's 3309
+  users:
+    container_name: users
+    build: ./users
     volumes:
-      - ./goals/mysql/initdb:/docker-entrypoint-initdb.d
-      - mysql-data-goals:/var/lib/mysql
+      - ./users/code:/usr/src/app
     networks:
-      - mygoals  # Ensure mysql-server-articles is on the same network as articles
-
+      - myusers
+    ports:
+      - "${USERS_PORT}:${USERS_PORT}"
+    working_dir: /usr/src/app
+    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+    environment:
+      - USERS_DB_HOST=mysql-server-users
+      - USERS_DB_NAME=${USERS_DB_NAME}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      - mysql-server-users
+    restart: always
+  
   leafs:
     container_name: leafs
     build: ./leafs
@@ -98,6 +88,53 @@ services:
       - mysql-server-leafs
     restart: always
 
+  gateway:
+    container_name: apigateway
+    build: ./apigateway
+    volumes:
+      - ./apigateway/code:/usr/src/app
+    networks:
+      - msexample
+      - mygoals
+      - myusers
+    ports:
+      - "3010:3010"
+    working_dir: /usr/src/app
+    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+    environment:
+      - PORT=3010
+    depends_on:
+      - goals
+      - users
+
+  mysql-server-goals:
+    container_name: mysql-server-goals
+    image: mysql:8.0
+    environment:
+      - MYSQL_DATABASE=${GOALS_DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Only root password, no MYSQL_USER
+    ports:
+      - "3308:3306"  # Map container's 3306 to host's 3309
+    volumes:
+      - ./goals/mysql/initdb:/docker-entrypoint-initdb.d
+      - mysql-data-goals:/var/lib/mysql
+    networks:
+      - mygoals  # Ensure mysql-server-articles is on the same network as articles
+
+  mysql-server-users:
+    container_name: mysql-server-users
+    image: mysql:8.0
+    environment:
+      - MYSQL_DATABASE=${USERS_DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Only root password, no MYSQL_USER
+    ports:
+      - "3310:3306"  # Map container's 3307 to host's 3309
+    volumes:
+      - ./users/mysql/initdb:/docker-entrypoint-initdb.d
+      - mysql-data-users:/var/lib/mysql
+    networks:
+      - myusers
+
   mysql-server-leafs:
     container_name: mysql-server-leafs
     image: mysql:8.0
@@ -117,8 +154,10 @@ services:
     image: phpmyadmin:latest
     networks:
       - mygoals
+      - myusers
     environment:
       - PMA_HOSTS=mysql-server-goals
+      - PMA_HOSTS=mysql-server-users
       - PMA_USER=${MYSQL_USER}
       - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD}
     ports:
@@ -129,9 +168,12 @@ networks:
     driver: bridge
   mygoals:
     driver: bridge
+  myusers:
+    driver: bridge
   myLeafs:
     driver: bridge
 
 volumes:
-  mysql-data-goals:
-  mysql-data-leafs:
+ mysql-data-goals:
+ mysql-data-users:
+ mysql-data-leafs:
