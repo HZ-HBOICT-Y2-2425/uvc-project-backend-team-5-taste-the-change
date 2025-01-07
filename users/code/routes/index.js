@@ -10,5 +10,6 @@ router.options('*', cors());
 // Route definitions
 router.get('/', (req, res) => res.json('hi'));
 router.get('/all-users', cors(), getUsers);
+//router.get('/user', cors(), checkAvailability);
 
 export default router;

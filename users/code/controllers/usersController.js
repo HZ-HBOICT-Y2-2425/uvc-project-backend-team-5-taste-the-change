@@ -12,3 +12,15 @@ export async function getUsers(req, res, next) {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 }
+// don't mind this, just trying around stuff
+// export async function checkAvailability (req, res, next) {
+//   try{
+
+//   const query = `SELECT * FROM users WHERE username = 'GordonRamsay'`;
+//   const [results] = await db.query(query);
+
+//   } catch (err) {
+//     console.error('Errorrrr', err);
+//     res.status(500).json ({ error: 'AAAA'});
+//   }
+// }
