@@ -30,12 +30,16 @@ const userProxy = createProxyMiddleware({
   changeOrigin: true
 })
 
-
+const co2Proxy = createProxyMiddleware({
+  target: 'http://co2:3016',
+  changeOrigin: true
+})
 
 router.use('/recipes', cors(), recipeProxy);
 router.use('/articles', cors(), articleProxy);
 router.use('/goals', cors(), goalProxy);
 router.use('/leafs', cors(), leafProxy);
 router.use('/users', cors(), userProxy);
+router.use('/co2', cors(), co2Proxy)
 
 export default router;

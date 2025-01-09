@@ -88,6 +88,27 @@ services:
       - mysql-server-leafs
     restart: always
 
+  co2:
+    container_name: co2
+    build: ./co2
+    volumes:
+      - ./co2/code:/usr/src/app
+    networks:
+      - myco2
+    ports:
+      - "${CO2_PORT}:${CO2_PORT}"
+    working_dir: /usr/src/app
+    command: bash -c "npm audit && npm install --no-audit && npm run dev"
+    environment:
+      - CO2_DB_HOST=mysql-server-co2
+      - CO2_DB_NAME=${CO2_DB_NAME}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      - mysql-server-co2
+    restart: always
+
   gateway:
     container_name: apigateway
     build: ./apigateway
@@ -97,6 +118,7 @@ services:
       - msexample
       - mygoals
       - myusers
+      - myco2
     ports:
       - "3010:3010"
     working_dir: /usr/src/app
@@ -149,6 +171,20 @@ services:
     networks:
       - myLeafs  # Ensure mysql-server-articles is on the same network as articles
 
+  mysql-server-co2:
+    container_name: mysql-server-co2
+    image: mysql:8.0
+    environment:
+      - MYSQL_DATABASE=${CO2_DB_NAME}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Only root password, no MYSQL_USER
+    ports:
+      - "3305:3306"  # Map container's 3306 to host's 3309
+    volumes:
+      - ./co2/mysql/initdb:/docker-entrypoint-initdb.d
+      - mysql-data-co2:/var/lib/mysql
+    networks:
+      - myco2  # Ensure mysql-server-articles is on the same network as articles
+
   phpmyadmin:
     container_name: phpmyadmin
     image: phpmyadmin:latest
@@ -162,6 +198,7 @@ services:
       - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD}
     ports:
       - "8080:80"
+  
 
 networks:
   msexample:
@@ -172,8 +209,11 @@ networks:
     driver: bridge
   myLeafs:
     driver: bridge
+  myco2: 
+    driver: bridge
 
 volumes:
  mysql-data-goals:
  mysql-data-users:
  mysql-data-leafs:
+ mysql-data-co2:
