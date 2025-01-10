@@ -1,4 +1,4 @@
 INSERT INTO users (username, totalemissions) VALUES 
-('TeriakiEnjoyer', 24000),
-('IloveCooking123', 178000),
-('GordonRamsay', 99900000);
+('TeriakiEnjoyer', 12),
+('IloveCooking123', 26),
+('GordonRamsay', 8);
