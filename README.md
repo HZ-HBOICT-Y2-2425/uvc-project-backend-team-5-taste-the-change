@@ -79,27 +79,5 @@ To stop the running services:
 ```bash
 docker-compose down -v
 ```
-
-## Project Structure
-```
-.
-├── apigateway
-│   ├── Dockerfile
-│   └── code
-├── articles
-│   ├── Dockerfile
-│   └── code
-├── recipes
-│   ├── Dockerfile
-│   └── code
-├── goals
-│   ├── Dockerfile
-│   ├── mysql
-│   │   └── initdb
-│   └── code
-├── docker-compose.yml
-└── .env.example
-```
-
 ## License
 This project is licensed under the MIT License.
