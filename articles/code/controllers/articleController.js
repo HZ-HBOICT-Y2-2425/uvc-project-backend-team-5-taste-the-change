@@ -1,4 +1,3 @@
-
 import { readFile } from 'fs/promises';
 const data = JSON.parse(
   await readFile(
