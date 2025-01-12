@@ -81,3 +81,596 @@ docker-compose down -v
 ```
 ## License
 This project is licensed under the MIT License.
+
+## API specifications
+Recipes 
+
+Runs on port 3012 on localhost 
+
+ 
+
+[GET] /   tests if API is running 
+
+ 
+
+Code 200: 
+
+"hi" 
+
+
+
+ 
+
+[GET] /recipes provides list of all recipes 
+
+ 
+
+Code 200: 
+
+{ 
+
+    "recipes": [ 
+
+        { 
+
+            "id": int, 
+
+            "name": "string”, 
+
+            "description": "string", 
+
+            "ingredients": [ 
+
+                "string” 
+
+            ], 
+
+            "emission_per_meal": int, 
+
+            "servings": int, 
+
+            "diet": "string", 
+
+            "time": int 
+
+            "image": "string", 
+
+            "slug": "string", 
+
+            "instructions": [ 
+
+          “string” 
+
+            ] 
+
+        }, 
+
+] 
+
+} 
+
+ 
+
+ 
+
+Code 404: 
+
+{} 
+
+ 
+
+ 
+
+[GET] /recipes/{id}  provides recipe with the specified id 
+
+ 
+
+Parameter: 
+
+id: integer 
+
+ 
+
+Code 200: 
+
+{ 
+
+    "id": int, 
+
+    "name": "string", 
+
+    "description": "string", 
+
+    "ingredients": [ 
+
+“string” 
+
+    ], 
+
+    "emission_per_meal": int, 
+
+    "servings": int, 
+
+    "diet": "string", 
+
+    "time": int, 
+
+    "image": "string", 
+
+    "slug": "string", 
+
+    "instructions": [ 
+
+        “string” 
+
+    ] 
+
+} 
+
+ 
+
+Code 404: 
+
+{} 
+
+ 
+
+ 
+
+Articles 
+
+Runs on port 3011 on localhost 
+
+ 
+
+[GET] /    tests if API is running 
+
+ 
+
+Code 200: 
+
+"hi" 
+
+ 
+
+ 
+
+[GET] /articles  provides list of all articles 
+
+ 
+
+Code 200: 
+
+{ 
+
+    "articles": [ 
+
+        { 
+
+            "name": "string", 
+
+            "imgUrl": "string", 
+
+            "info": "string", 
+
+            "Url": "string" 
+
+        }, 
+
+] 
+
+} 
+
+ 
+
+ 
+
+Code 404: 
+
+{} 
+
+ 
+
+Goals 
+
+Runs on port 3013 on localhost 
+
+ 
+
+[GET] /    tests if API is running 
+
+ 
+
+Code 200: 
+
+"hi" 
+
+ 
+
+ 
+
+ 
+
+[GET] /random-goals provides an array of 3 random goals every call 
+
+ 
+
+Code 200: 
+
+[ 
+
+    { 
+
+        "id": int, 
+
+        "goal": "string", 
+
+        "description": "string", 
+
+        “level”: “string”, 
+
+        “status”: “string”, 
+
+        “last_picked”: “datetime” 
+
+    }, 
+
+    { 
+
+        "id": int, 
+
+        "goal": "string", 
+
+        "description": "string", 
+
+        “level”: “string”, 
+
+        “status”: “string”, 
+
+        “last_picked”: “datetime” 
+
+    }, 
+
+    { 
+
+        "id": int, 
+
+        "goal": "string", 
+
+        "description": "string", 
+
+        “level”: “string”, 
+
+        “status”: “string”, 
+
+        “last_picked”: “datetime” 
+
+    } 
+
+] 
+
+ 
+
+Code 404: 
+
+{} 
+
+ 
+
+ 
+
+[POST] /pick-goal/{id} runs a function on a goal with the specified id to select it in the frontend 
+
+ 
+
+Parameter: 
+
+id: integer 
+
+ 
+
+Code 200: 
+
+{ 
+
+     "id": int, 
+
+     "goal": "string", 
+
+     "description": "string", 
+
+     “level”: “string”, 
+
+     “status”: “string”, 
+
+     “last_picked”: “datetime” 
+
+} 
+
+ 
+
+Code 400: 
+
+(if id is NaN) 
+
+{ 
+
+    "error": "Invalid goal ID." 
+
+} 
+
+ 
+
+(if id is a number outside the range of ids) 
+
+{ 
+
+    "error": "Goal not found, already picked, or another goal is 
+
+     already picked" 
+
+} 
+
+ 
+
+[GET] /goals/{id}/picked gives details of the selected goal 
+
+ 
+
+Parameter: 
+
+id: integer 
+
+ 
+
+Code 200: 
+
+{ 
+
+     "id": int, 
+
+     "goal": "string", 
+
+     "description": "string", 
+
+     “status”: “string” 
+
+} 
+
+ 
+
+Code 400: 
+
+(if id is NaN) 
+
+{ 
+
+    "error": "Invalid goal ID." 
+
+} 
+
+ 
+
+Code 404: 
+
+(if id is a number outside the range of ids) 
+
+{ 
+
+    "error”: “No picked goal found for this ID.” 
+
+} 
+
+ 
+
+[GET] /goals/{id}/messages gives messages associated with the selected goal 
+
+ 
+
+Parameter: 
+
+id: integer 
+
+ 
+
+Code 200: 
+
+{ 
+
+    "messages": [ 
+
+       “string" 
+
+    ] 
+
+} 
+
+ 
+
+Code 400: 
+
+(if id is NaN) 
+
+{ 
+
+    "error": "Invalid goal ID." 
+
+} 
+
+ 
+
+Code 404: 
+
+(if id is a number outside the range of ids) 
+
+{ 
+
+    "error”: “No messages found for this goal.” 
+
+} 
+
+ 
+
+[GET] /goals/history gives all previously picked goals 
+
+ 
+
+Code 200: 
+
+[ 
+
+    { 
+
+        "id": int, 
+
+        "goal": "string", 
+
+        "description": "string", 
+
+        “last_picked”: “datetime” 
+
+    }, 
+
+] 
+
+ 
+
+Code 404: 
+
+{} 
+
+ 
+
+[POST] /goals/{id}/collect confirms that the leaves from a goal have been collected once finished 
+
+ 
+
+Parameter: 
+
+id: integer 
+
+ 
+
+Code 200: 
+
+{ 
+
+     "message”: “Goal collected successfully.”, 
+
+     “goalId”: int 
+
+} 
+
+ 
+
+Code 400: 
+
+(if id is NaN) 
+
+{ 
+
+    "error": "Invalid goal ID." 
+
+} 
+
+ 
+
+Code 404: 
+
+(if id is a number outside the range of ids) 
+
+{ 
+
+    "error”: “Goal not found or already collected” 
+
+} 
+
+ 
+
+Leafs 
+
+Runs on port 3014 on localhost 
+
+ 
+
+[GET] /    tests if API is running 
+
+ 
+
+Code 200: 
+
+"hi" 
+
+ 
+
+[GET] /getLeafAmount shows how many leaves you currently have 
+
+ 
+
+Code 200: 
+
+[ 
+
+    { 
+
+        “leafAmount”: int 
+
+    } 
+
+] 
+
+ 
+
+Code 404: 
+
+{} 
+
+ 
+
+Users 
+
+Runs on port 3015 on localhost 
+
+ 
+
+[GET] /    tests if API is running 
+
+ 
+
+Code 200: 
+
+"hi" 
+
+ 
+
+[GET] /all-users gives information of every user on the platform 
+
+ 
+
+Code 200: 
+
+[ 
+
+    { 
+
+        “id”: int, 
+
+        “username”: “string”, 
+
+        “totalemissions”: int, 
+
+        “leafAmount”: int, 
+
+        “dietgoal”: “string”, 
+
+        “accountcreationday”: “date” 
+
+    }, 
+
+] 
+
+ 
+
+Code 404: 
+
+{} 
