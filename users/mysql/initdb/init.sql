@@ -17,6 +17,6 @@ CREATE TABLE IF NOT EXISTS users (
     totalemissions INT,
     leafamount INT,
     dietgoal VARCHAR(255),
-    accountcreationday TIME     
+    accountcreationday DATE    
 );
 
