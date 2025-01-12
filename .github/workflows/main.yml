@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - pipeline
 
 jobs:
   build-and-deploy:
@@ -15,29 +14,65 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Docker
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-      # Step 3: Set up Docker Compose
-      - name: Set up Docker Compose
-        uses: docker/compose-action@v2
+      # Step 3: Install Dependencies for Each API
+      - name: Install Dependencies for Articles API
+        run: |
+          cd ./articles/code
+          npm install
+        continue-on-error: false
 
-      # Step 4: Build and Push Docker Images
+      - name: Install Dependencies for Recipes API
+        run: |
+          cd ./recipes/code
+          npm install
+        continue-on-error: false
+
+      - name: Install Dependencies for Goals API
+        run: |
+          cd ./goals/code
+          npm install
+        continue-on-error: false
+
+      - name: Install Dependencies for API Gateway
+        run: |
+          cd ./apigateway/code
+          npm install
+        continue-on-error: false
+
+      - name: Install Dependencies for API Gateway
+        run: |
+          cd ./leafs/code
+          npm install
+        continue-on-error: false
+
+      - name: Install Dependencies for API Gateway
+        run: |
+          cd ./users/code
+          npm install
+        continue-on-error: false
+
+      # Step 4: Log in to Docker Hub
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # Step 5: Build and Push Docker Images
       - name: Build and Push Docker Images
         run: |
           docker-compose -f docker-compose.yml build
           docker-compose -f docker-compose.yml push
-        continue-on-error: false  # Halt if image build or push fails
+        env:
+          DOCKER_BUILDKIT: 1
 
-      # Step 5: Deploy Backend Services
+      # Step 6: Deploy Backend Services
       - name: Deploy Backend Services
         run: |
-          docker-compose -f docker-compose.yml up -d  # Bring up the backend services
-        continue-on-error: false  # Halt if services fail to start
-
-      # Step 6: Clean up Docker resources
-      - name: Clean up Docker Resources
-        run: |
-          docker-compose -f docker-compose.yml down -v  # Clean up containers after deployment
-        continue-on-error: true  # Continue even if cleaning fails
+          docker-compose -f docker-compose.yml up -d
