@@ -1,7 +1,7 @@
 # Backend Microservices Project
 
 ## Overview
-This project, Taste the Change, consists of a backend built with a microservices architecture. The application provides APIs for managing articles, recipes, and goals. The `goals` service is connected to a SQL database for data persistence, and all services are containerized using Docker. An API Gateway is implemented to route and centralize communication among the microservices.
+This project, Taste the Change, consists of a backend built with a microservices architecture. The application provides APIs for managing articles, recipes, and goals. The `goals`, `users` and `leafs` services are connected to a SQL database for data persistence, and all services are containerized using Docker. An API Gateway is implemented to route and centralize communication among the microservices.
 
 ## Architecture
 The project is structured as follows:
@@ -9,7 +9,9 @@ The project is structured as follows:
 - **Articles API**: Manages article data and is accessible at port `3011`.
 - **Recipes API**: Manages recipe data and is accessible at port `3012`.
 - **Goals API**: Manages user goals and interacts with a SQL database. Accessible at port `3013`.
-- **MySQL Database**: Stores data for the Goals API.
+- **Leafs API**: Manages leaves and interacts with a SQL database. Accessible at port `3014`..
+- **Users API**: Manages users and interacts with a SQL database. Accessible at port `3015`..
+- **MySQL Database**: Stores data for the Goals, Users and Leafs APIs.
 - **phpMyAdmin**: Provides a UI for interacting with the MySQL database. Accessible at port `8080`.
 
 ## Features
@@ -39,11 +41,28 @@ The project is structured as follows:
 ### Environment Variables
 Create a `.env` file in the project root with the following variables:
 ```env
-GOALS_DB_NAME=<your-database-name>
-MYSQL_USER=<your-mysql-username>
-MYSQL_PASSWORD=<your-mysql-password>
-MYSQL_ROOT_PASSWORD=<your-root-password>
 GOALS_PORT=3013
+GOALS_DB_HOST=mysql-server-goals
+GOALS_DB_NAME=goals_app
+GOALS_MYSQL_PORT=3308
+
+USERS_PORT=3015
+USERS_DB_HOST=mysql-server-users
+USERS_DB_NAME=users_app
+USERS_MYSQL_PORT=3310
+
+LEAFS_PORT=3014
+LEAFS_DB_HOST=mysql-server-leafAmount
+LEAFS_DB_NAME=leafs_app
+LEAFS_MYSQL_PORT=3309
+
+MYSQL_PORT=3306
+MYSQL_ROOT_PASSWORD=rootpassword
+MYSQL_USER=root
+MYSQL_PASSWORD=userpassword
+
+NODE_ENV=development
+FRONTEND_URL=http://localhost:5173
 ```
 
 ### Running the Project
@@ -72,6 +91,8 @@ GOALS_PORT=3013
    - Recipes API: `http://localhost:3012`
    - Articles API: `http://localhost:3011`
    - Goals API: `http://localhost:3013`
+   - Leafs API: `http://localhost:3014`
+   - Users API: `http://localhost:3015`
    - phpMyAdmin: `http://localhost:8080`
 
 ### Stopping the Services
