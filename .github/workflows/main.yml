@@ -1,0 +1,43 @@
+name: Backend Deployment
+
+on:
+  push:
+    branches:
+      - main
+      - pipeline
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Docker
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      # Step 3: Set up Docker Compose
+      - name: Set up Docker Compose
+        uses: docker/compose-action@v2
+
+      # Step 4: Build and Push Docker Images
+      - name: Build and Push Docker Images
+        run: |
+          docker-compose -f docker-compose.yml build
+          docker-compose -f docker-compose.yml push
+        continue-on-error: false  # Halt if image build or push fails
+
+      # Step 5: Deploy Backend Services
+      - name: Deploy Backend Services
+        run: |
+          docker-compose -f docker-compose.yml up -d  # Bring up the backend services
+        continue-on-error: false  # Halt if services fail to start
+
+      # Step 6: Clean up Docker resources
+      - name: Clean up Docker Resources
+        run: |
+          docker-compose -f docker-compose.yml down -v  # Clean up containers after deployment
+        continue-on-error: true  # Continue even if cleaning fails
