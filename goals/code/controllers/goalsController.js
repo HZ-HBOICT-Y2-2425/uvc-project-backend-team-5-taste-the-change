@@ -3,17 +3,28 @@ import db from '../goals.js'; // Import the MySQL connection
 // Get random goals
 export async function getRandomGoals(req, res, next) {
   try {
-    // Fetch all goals from the database
-    const query = 'SELECT * FROM goals';
-    const [results] = await db.query(query);
+    // Reset all picked goals
+    const resetQuery = `
+      UPDATE goals 
+      SET status = "not_picked", last_picked = NULL 
+      WHERE status = "picked";
+    `;
+    await db.query(resetQuery);
+
+    // Fetch new random goals
+    const fetchQuery = `
+      SELECT * FROM goals 
+      WHERE status != "collected";
+    `;
+    const [randomGoals] = await db.query(fetchQuery);
 
     // Shuffle and select 3 random goals
-    const randomGoals = results.sort(() => 0.5 - Math.random()).slice(0, 3);
+    const shuffledGoals = randomGoals.sort(() => 0.5 - Math.random()).slice(0, 3);
 
-    res.status(200).json(randomGoals);
-  } catch (err) {
-    console.error('Error fetching random goals:', err);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(200).json(shuffledGoals);
+  } catch (error) {
+    console.error("Error resetting and fetching goals:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 }
 
@@ -75,17 +86,6 @@ export async function getPickedGoal(req, res) {
     res.status(200).json(results[0]);
   } catch (error) {
     console.error('Error fetching picked goal:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-}
-
-export async function resetGoals(req, res) {
-  try {
-    const query = 'UPDATE goals SET status = "not_picked", last_picked = NULL WHERE status = "picked";';
-    await db.query(query);
-    res.status(200).json({ message: 'All goals reset successfully.' });
-  } catch (error) {
-    console.error('Error resetting goals:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 }

@@ -18,27 +18,27 @@ INSERT INTO goals (id, goal, description, level) VALUES
 
 -- Seed messages for all goals
 INSERT INTO messages (goal_id, message) VALUES
-(1, 'You are making a difference one meal at a time! 🌱'),
+(1, 'You are making a difference one meal at a time!'),
 (1, 'Small changes lead to big results. Keep adding those plant-based meals!'),
 (1, 'Every veggie on your plate reduces your carbon footprint.'),
 
-(2, 'Exploring new proteins is fun and nutritious! 🥗'),
+(2, 'Exploring new proteins is fun and nutritious!'),
 (2, 'Tofu today, lentils tomorrow—you are rocking the protein variety!'),
 (2, 'Plant-based proteins are packed with goodness. Keep it up!'),
 
-(3, 'Cooking new recipes is like discovering hidden treasures! 🍳'),
+(3, 'Cooking new recipes is like discovering hidden treasures!'),
 (3, 'Every new dish is a step closer to your goal. Keep experimenting!'),
 (3, "Great recipes build a great lifestyle. What's cooking today?"),
 
 (4, "Meal prep saves time and keeps you on track. You're doing awesome!"),
-(4, 'A little planning today means a lot of success tomorrow. 🌟'),
+(4, 'A little planning today means a lot of success tomorrow.'),
 (4, 'Your organized prep will keep you focused on your goal!'),
 
-(5, 'New foods = new adventures! Try something exciting this week. 🍽️'),
+(5, 'New foods = new adventures! Try something exciting this week.'),
 (5, 'A new dish awaits you! Discover and enjoy.'),
 (5, "Variety is the spice of life. You're mastering it one meal at a time!"),
 
-(6, 'Switching to plant-based alternatives is a great step forward! 🥛'),
+(6, 'Switching to plant-based alternatives is a great step forward!'),
 (6, 'Your choices today are shaping a better tomorrow. Keep it up!'),
 (6, 'Every small swap contributes to a healthier planet.'),
 
@@ -46,10 +46,10 @@ INSERT INTO messages (goal_id, message) VALUES
 (7, "30 days of plant power—you are unstoppable!"),
 (7, "Every bite you take supports a healthier planet. Keep it up!"),
 
-(8, 'Knowledge is power. Keep educating yourself about plant-based living. 📚'),
+(8, 'Knowledge is power. Keep educating yourself about plant-based living.'),
 (8, 'Your commitment to learning is inspiring. The more you know, the better you grow!'),
 (8, 'Stay curious and keep exploring the science behind your choices.'),
 
-(9, 'Building community makes the journey easier and more fun! 🤝'),
+(9, 'Building community makes the journey easier and more fun!'),
 (9, 'Your contributions to the plant-based community are meaningful.'),
 (9, 'Together, we can create a more sustainable world. Keep connecting!');
