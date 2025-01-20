@@ -23,7 +23,7 @@ INSERT INTO messages (goal_id, message) VALUES
 (1, 'Every veggie on your plate reduces your carbon footprint.'),
 
 (2, 'Exploring new proteins is fun and nutritious!'),
-(2, 'Tofu today, lentils tomorrow—you are rocking the protein variety!'),
+(2, 'Tofu today, lentils tomorrow-you are rocking the protein variety!'),
 (2, 'Plant-based proteins are packed with goodness. Keep it up!'),
 
 (3, 'Cooking new recipes is like discovering hidden treasures!'),
@@ -42,8 +42,8 @@ INSERT INTO messages (goal_id, message) VALUES
 (6, 'Your choices today are shaping a better tomorrow. Keep it up!'),
 (6, 'Every small swap contributes to a healthier planet.'),
 
-(7, "You're all in, and it's inspiring! 🌱"),
-(7, "30 days of plant power—you are unstoppable!"),
+(7, "You're all in, and it's inspiring!"),
+(7, "30 days of plant power you are unstoppable!"),
 (7, "Every bite you take supports a healthier planet. Keep it up!"),
 
 (8, 'Knowledge is power. Keep educating yourself about plant-based living.'),
